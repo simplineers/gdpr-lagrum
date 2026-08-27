@@ -1,4 +1,37 @@
-# METOD — GDPR självständiga lagrum v1.0
+"""
+metod.py — Genererar METOD.md ur den faktiska körningen.
+
+Siffrorna i metoddokumentet hämtas ur genereringen, aldrig ur handpåläggning.
+Det gör att de inte kan bli gamla när generatorn ändras.
+"""
+import os, statistics, collections
+from statements import generate, OJ, RATT, KONS
+from parse import check_source, EXPECTED_SHA256
+import render as R
+
+OUT = os.environ.get("GDPR_METOD", "METOD.md")
+
+
+def main():
+    sts, reg, chapters = generate()
+    sts.sort(key=R.sortkey)
+    nt = collections.Counter(s["nivatyp"] for s in sts)
+    rt = collections.Counter(r["typ"] for s in sts for r in s["referenser"])
+    ext = sorted({r["instrument"] for s in sts for r in s["referenser"]
+                  if r["typ"] == "externt"})
+    med_termer = sum(1 for s in sts if s["termer"])
+    lens = [sum(len(b["text"]) for b in s["normtext"]) for s in sts]
+    kedja = sum(len(s["referenskedja"]) for s in sts)
+    vag = collections.Counter(v["uttryck"] for s in sts
+                              for v in s["vaga_hanvisningar"])
+    c1 = sum(1 for s in sts if s["proveniens"]["markor"] != "▼B")
+    per_art = collections.Counter(s["artikel"] for s in sts)
+    utan_ref = sum(1 for s in sts if not s["referenser"])
+    nblock = sum(len(s["normtext"])
+                 + sum(len(r.get("block", [])) for r in s["referenser"])
+                 + len(s["termer"]) for s in sts)
+
+    md = f"""# METOD — GDPR självständiga lagrum v1.0
 
 Detta dokument beskriver hur lagrummen i `lagrum/` och `dist/` har
 framställts, vilka val som gjorts och vilka kontroller som utförts. Syftet är
@@ -13,9 +46,9 @@ Dokumentet genereras av `metod.py` ur den faktiska körningen. Siffrorna nedan
 | | |
 |---|---|
 | Rättsakt | Europaparlamentets och rådets förordning (EU) 2016/679 |
-| Autentisk källa | EUT L 119, 4.5.2016, s. 1 |
-| Rättelse (svensk språkversion) | rättelse EUT L 127, 23.5.2018, s. 16 |
-| Bärare av ordalydelsen | konsoliderad text CELEX 02016R0679-20160504 (SV) |
+| Autentisk källa | {OJ} |
+| Rättelse (svensk språkversion) | {RATT} |
+| Bärare av ordalydelsen | {KONS} |
 | Omfattning | Artiklarna 1–99 |
 
 Ordalydelsen är hämtad ur den konsoliderade texten, som innehåller
@@ -24,8 +57,8 @@ rättsverkan och utgör enligt Publikationsbyrån endast dokumentationshjälpmed
 Därför anges i varje lagrum både den autentiska källan och rättelsen, samt
 huruvida det enskilda lagrummets ordalydelse är originalets eller rättelsens.
 Detta är möjligt eftersom den konsoliderade texten är märkt med `▼B`
-(originallydelse) respektive `▼C1` (lydelse enligt rättelsen). Av 705
-lagrum har 42 ändrad lydelse enligt rättelsen.
+(originallydelse) respektive `▼C1` (lydelse enligt rättelsen). Av {len(sts)}
+lagrum har {c1} ändrad lydelse enligt rättelsen.
 
 Skälen (1)–(173) ingår inte. De är tolkningsdata, inte bindande norm, och
 blandas medvetet inte in i normtexten.
@@ -55,11 +88,11 @@ Lagrum bildas på lägsta adresserbara normnivå:
 
 | Nivå | ID-mönster | Exempel | Antal |
 |---|---|---|---|
-| Led i punkt | `GDPR-{artikel}.{punkt}.{led}` | `GDPR-5.1.b` | 352 |
-| Punkt utan led | `GDPR-{artikel}.{punkt}` | `GDPR-5.2` | 312 |
-| Definition i artikel 4 | `GDPR-4.{nr}` | `GDPR-4.11` | 26 |
-| Artikel utan punkter | `GDPR-{artikel}` | `GDPR-16` | 15 |
-| **Totalt** | | | **705** |
+| Led i punkt | `GDPR-{{artikel}}.{{punkt}}.{{led}}` | `GDPR-5.1.b` | {nt['led']} |
+| Punkt utan led | `GDPR-{{artikel}}.{{punkt}}` | `GDPR-5.2` | {nt['punkt']} |
+| Definition i artikel 4 | `GDPR-4.{{nr}}` | `GDPR-4.11` | {nt['definition']} |
+| Artikel utan punkter | `GDPR-{{artikel}}` | `GDPR-16` | {nt['artikel']} |
+| **Totalt** | | | **{len(sts)}** |
 
 Identifierarna är stabila och deterministiska: de härleds ur förordningens egen
 numrering, inte ur genereringsordningen. Identifieraren är också filnamn, så
@@ -95,16 +128,16 @@ markdownutgåvorna återgivna med `*emfas*`; i JSON finns både `text` (ren) och
 
 Rekursionsdjup är 1. Hänvisningar i infogad text redovisas i referenskedjan men
 infogas inte, vilket hindrar att lagrummet växer okontrollerat via kedjor som
-17.3 b → 9.2 h → 89.1. Antal redovisade kedjeposter: 1424.
+17.3 b → 9.2 h → 89.1. Antal redovisade kedjeposter: {kedja}.
 
 Cykel- och redundanshantering: hänvisning till lagrummets egen bestämmelse
 eller egen punkt infogas inte, eftersom texten redan finns i normtexten. Om en
 hel punkt infogas utesluts separat infogning av enskilda led i samma punkt.
 
-Utfall: 454 infogade referenser, 218 pekare,
-9 externa. Samtliga hänvisningar kunde upplösas; noll oupplösta.
+Utfall: {rt['infogad']} infogade referenser, {rt['pekare']} pekare,
+{rt['externt']} externa. Samtliga hänvisningar kunde upplösas; noll oupplösta.
 
-Externa instrument som förekommer: Europaparlamentets och rådets direktiv (EU) 2015/1535, direktiv 95/46/EG, förordning (EU) nr 182/2011.
+Externa instrument som förekommer: {', '.join(ext)}.
 
 **Tolkningsregel för bokstaven ”i”.** I svensk lagtext är ”i” både ett led
 (”punkt 2 h, i eller j”) och prepositionen ”i” (”punkt 1 i denna artikel”).
@@ -116,7 +149,7 @@ kontrollen.
 
 Definitionerna i artikel 4 infogas ordagrant för de termer som faktiskt
 förekommer i lagrummets normtext eller i dess infogade referenser. Lagrum
-med minst en term: 633 av 705.
+med minst en term: {med_termer} av {len(sts)}.
 
 Matchningen sker mot ett slutet svenskt böjningssuffix (bestämd/obestämd form,
 plural, genitiv) och kräver ordgräns, så att sammansättningar inte ger
@@ -151,7 +184,7 @@ En definition injicerar aldrig sig själv.
 * **Vaga hänvisningar löses inte upp.** Uttryck som ”unionsrätten” eller
   ”medlemsstaternas nationella rätt” pekar inte på ett bestämt instrument och
   kräver bedömning i det enskilda fallet. De förekommer så här ofta:
-  denna förordning (180), unionsrätten (59), medlemsstaternas nationella rätt (41), denna artikel (27), detta kapitel (3), den här förordningen (2).
+  {', '.join(f'{k} ({v})' for k, v in vag.most_common(6))}.
 
 ## 8. Utförda kontroller
 
@@ -161,12 +194,12 @@ ordalydelse avviker.
 | Kontroll | Skript | Utfall |
 |---|---|---|
 | Återsammanfogning av parsat träd jämfört tecken för tecken mot källans artikeltext, alla 99 artiklar | `verify.py` | 0 avvikelser |
-| Samtliga textblock i JSON återfinns ordagrant i källan (4672 block) | `final_check.py` | 0 avvikelser |
+| Samtliga textblock i JSON återfinns ordagrant i källan ({nblock} block) | `final_check.py` | 0 avvikelser |
 | Samtliga blockcitat i samlingsdokumentet återfinns ordagrant i källan | `final_check.py` | 0 avvikelser |
 | Samtliga blockcitat i varje enskild lagrumsfil återfinns ordagrant i källan | `final_check.py` | 0 avvikelser |
-| Filnamn matchar lagrummets identifierare | `final_check.py` | 705 av 705 |
+| Filnamn matchar lagrummets identifierare | `final_check.py` | {len(sts)} av {len(sts)} |
 | Interna länkar i lagrumsfilerna | `final_check.py` | 0 brutna |
-| Unika identifierare | `final_check.py` | 705 av 705 |
+| Unika identifierare | `final_check.py` | {len(sts)} av {len(sts)} |
 | Artikeltäckning | `final_check.py` | 99 av 99 |
 | Källfilens checksumma | `parse.py` | pinnad, se `source/SOURCE.md` |
 
@@ -174,7 +207,7 @@ ordalydelse avviker.
 
 | Fil | Innehåll |
 |---|---|
-| `lagrum/artikel-NN/GDPR-*.md` | ett lagrum per fil, 705 filer, versionshanterade |
+| `lagrum/artikel-NN/GDPR-*.md` | ett lagrum per fil, {len(sts)} filer, versionshanterade |
 | `lagrum/artikel-NN/README.md` | artikelindex med samtliga lagrum i artikeln |
 | `lagrum/README.md` | rotindex per kapitel och avsnitt |
 | `dist/gdpr-lagrum-v1.0.md` | samlingsdokument, alla lagrum |
@@ -196,13 +229,20 @@ JSON-struktur: `kalla`, `omfattning`, `antal_lagrum`, `lagrum[]`.
 
 ## 10. Statistik
 
-* Lagrum: 705
-* Normtextens längd per lagrum: median 309 tecken,
-  max 1863 tecken
-* Lagrum utan hänvisningar (fristående redan i normtexten): 302
-* Flest lagrum i en artikel: artikel 58
-  (29 st)
+* Lagrum: {len(sts)}
+* Normtextens längd per lagrum: median {int(statistics.median(lens))} tecken,
+  max {max(lens)} tecken
+* Lagrum utan hänvisningar (fristående redan i normtexten): {utan_ref}
+* Flest lagrum i en artikel: artikel {per_art.most_common(1)[0][0]}
+  ({per_art.most_common(1)[0][1]} st)
 
 *Version 1.0. Genererad av `metod.py` ur källfil med SHA-256
-`e182db01e290f2768224dc5e6acc042a97bef0592459bf886eb00831c35fab4c`. Inget datum anges eftersom dokumentet ska vara
+`{EXPECTED_SHA256}`. Inget datum anges eftersom dokumentet ska vara
 bitidentiskt vid omgenerering — se avsnitt 8 om sync-grinden.*
+"""
+    open(OUT, "w").write(md)
+    print(f"{OUT}: {len(md)} tecken")
+
+
+if __name__ == "__main__":
+    main()

@@ -1,5 +1,5 @@
 """
-statements.py — Genererar självständiga normuttalanden ur GDPR:s artikeltext.
+statements.py — Genererar självständiga lagrum ur GDPR:s artikeltext.
 
 Designbeslut (samtliga medvetna och dokumenterade i METOD.md):
   * Normtext återges ordagrant och obrutet. Infogade referenser läggs i
@@ -10,7 +10,7 @@ Designbeslut (samtliga medvetna och dokumenterade i METOD.md):
   * Externa instrument (direktiv, fördrag, stadgan m.m.) infogas aldrig.
   * Termer: artikel 4-definitioner för de termer som faktiskt förekommer.
 """
-import re, json, csv, unicodedata
+import re, json, csv, os
 from collections import OrderedDict
 import parse as P
 
@@ -19,10 +19,10 @@ RATT = "rättelse EUT L 127, 23.5.2018, s. 16"
 KONS = "konsoliderad text CELEX 02016R0679-20160504 (SV)"
 
 FORBEHALL = (
-    "Uttalandet är ett utdrag ur förordning (EU) 2016/679. Normtexten återges "
-    "ordagrant. Förordningen ska tolkas som en helhet och mot bakgrund av sina "
-    "skäl; utdraget ersätter inte en fullständig rättslig bedömning. Nationell "
-    "rätt kan komplettera eller precisera tillämpningen."
+    "Utdraget avser ett enskilt lagrum i förordning (EU) 2016/679. Normtexten "
+    "återges ordagrant. Förordningen ska tolkas som en helhet och mot bakgrund "
+    "av sina skäl; utdraget ersätter inte en fullständig rättslig bedömning. "
+    "Nationell rätt kan komplettera eller precisera tillämpningen."
 )
 
 # ----------------------------------------------------------------- index
@@ -538,10 +538,12 @@ def generate():
 
 if __name__ == "__main__":
     sts, reg, ch = generate()
-    print("uttalanden:", len(sts))
+    print("lagrum:", len(sts))
     from collections import Counter
     print(Counter(s["nivatyp"] for s in sts))
-    json.dump(sts, open("/home/claude/gdpr/statements.json", "w"),
+    out = os.environ.get("GDPR_OUT", "dist")
+    os.makedirs(out, exist_ok=True)
+    json.dump(sts, open(f"{out}/statements.json", "w"),
               ensure_ascii=False, indent=1)
     s = [x for x in sts if x["id"] == "GDPR-5.1.b"][0]
     print(json.dumps(s, ensure_ascii=False, indent=1)[:3000])
