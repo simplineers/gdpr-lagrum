@@ -34,7 +34,10 @@ jobs:
       - name: Bygg och verifiera
         run: make all
 
-      - name: Ladda upp artefakter
+      - name: Kontrollera att lagrum/ och METOD.md ar aktuella
+        run: make sync
+
+      - name: Ladda upp samlingsutgavorna
         uses: actions/upload-artifact@v4
         with:
           name: gdpr-lagrum-artefakter
