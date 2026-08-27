@@ -14,7 +14,8 @@ Dokumentet genereras av `metod.py` ur den faktiska körningen. Siffrorna nedan
 |---|---|
 | Rättsakt | Europaparlamentets och rådets förordning (EU) 2016/679 |
 | Autentisk källa | EUT L 119, 4.5.2016, s. 1 |
-| Rättelse (svensk språkversion) | rättelse EUT L 127, 23.5.2018, s. 16 |
+| Rättelse 1 (svensk språkversion) | rättelse, EUT L 127, 23.5.2018, s. 2, markerad ▼C1 |
+| Rättelse 2 (svensk språkversion) | rättelse, EUT L 74, 4.3.2021, s. 35, markerad ▼C2 |
 | Bärare av ordalydelsen | konsoliderad text CELEX 02016R0679-20160504 (SV) |
 | Omfattning | Artiklarna 1–99 |
 
@@ -23,9 +24,18 @@ originaltexten med rättelsen införd. Konsoliderade texter saknar formellt
 rättsverkan och utgör enligt Publikationsbyrån endast dokumentationshjälpmedel.
 Därför anges i varje lagrum både den autentiska källan och rättelsen, samt
 huruvida det enskilda lagrummets ordalydelse är originalets eller rättelsens.
-Detta är möjligt eftersom den konsoliderade texten är märkt med `▼B`
-(originallydelse) respektive `▼C1` (lydelse enligt rättelsen). Av 705
-lagrum har 42 ändrad lydelse enligt rättelsen.
+Detta är möjligt eftersom den konsoliderade texten är märkt per textblock med
+vilken rättsakt lydelsen kommer från. Fördelningen över lagrummen:
+
+| Markör | Lydelsens ursprung | Lagrum |
+|---|---|---|
+| ▼B | originallydelse, EUT L 119, 4.5.2016, s. 1 | 663 |
+| ▼C1 | rättelse, EUT L 127, 23.5.2018, s. 2 | 40 |
+| ▼C2 | rättelse, EUT L 74, 4.3.2021, s. 35 | 2 |
+
+Kopplingen markör till rättsakt är hämtad ur konsolideringens egen huvudtabell,
+inte ur andrahandskällor. En markör som saknas i tabellen är ett hårt fel som
+stoppar bygget, så att ett lagrum aldrig kan märkas med fel EUT-referens.
 
 Skälen (1)–(173) ingår inte. De är tolkningsdata, inte bindande norm, och
 blandas medvetet inte in i normtexten.

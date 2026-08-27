@@ -77,14 +77,14 @@ normtexten.
 
 Normtexten kommer från förordning (EU) 2016/679, autentiskt offentliggjord i
 EUT L 119, 4.5.2016, s. 1, i lydelse enligt rättelse i EUT L 127, 23.5.2018,
-s. 16. Den svenska rättelsen omfattar sex sidor och finns inte i
-originalpubliceringen — därför används den konsoliderade texten som bärare av
-ordalydelsen.
+s. 2, och rättelse i EUT L 74, 4.3.2021, s. 35. Rättelserna finns inte i originalpubliceringen — därför används den
+konsoliderade texten som bärare av ordalydelsen.
 
 Endast EUT:s elektroniska utgåva är giltig och har rättslig verkan (rådets
 förordning (EU) nr 216/2013). Konsoliderade texter är dokumentationshjälpmedel
-utan rättslig verkan. Varje lagrum anger båda källorna och om just den
-ordalydelsen är originalets (`▼B`) eller rättelsens (`▼C1`).
+utan rättslig verkan. Varje lagrum anger den autentiska källan och vilken rättsakt just den
+ordalydelsen kommer från: originalet (`▼B`, 663 lagrum), 2018-rättelsen
+(`▼C1`, 40 lagrum) eller 2021-rättelsen (`▼C2`, 2 lagrum).
 
 Indata pinnas med SHA-256. Bygget vägrar starta mot en okänd källfil, så
 artefakterna kan inte härledas ur en annan version än den avsedda. Se

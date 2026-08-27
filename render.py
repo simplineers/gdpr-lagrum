@@ -12,7 +12,7 @@ ordalydelsen kan extraheras och verifieras maskinellt i samtliga utgåvor.
 lagrum/ töms och byggs om vid varje körning. Lägg inga handskrivna filer där.
 """
 import json, csv, os, shutil
-from statements import generate, OJ, RATT, KONS, FORBEHALL
+from statements import generate, OJ, RATT, RATTELSER, KONS, FORBEHALL
 
 OUT = os.environ.get("GDPR_OUT", "dist")
 LAGRUM = os.environ.get("GDPR_LAGRUM", "lagrum")
@@ -294,7 +294,10 @@ def main():
     open(os.path.join(LAGRUM, "README.md"), "w").write(
         render_root_index(sts, byart))
 
-    json.dump({"kalla": {"autentisk": OJ, "rattelse": RATT, "barare": KONS},
+    json.dump({"kalla": {"autentisk": OJ,
+                         "rattelser": {f"C{i}": RATTELSER[f"C{i}"]
+                                       for i in range(1, len(RATTELSER) + 1)},
+                         "barare": KONS},
                "omfattning": "artiklarna 1–99",
                "antal_lagrum": len(sts),
                "lagrum": sts},

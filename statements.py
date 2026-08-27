@@ -15,7 +15,31 @@ from collections import OrderedDict
 import parse as P
 
 OJ = "EUT L 119, 4.5.2016, s. 1"
-RATT = "rättelse EUT L 127, 23.5.2018, s. 16"
+# Konsolideringen bär två rättelser. Referenserna är hämtade ur
+# konsolideringens egen huvudtabell ("Rättad genom: ►C1 ... ►C2 ...").
+# Tabellen skriver "EGT", vilket är en mall-rest: tidningen heter EUT sedan
+# den 1 februari 2003, så EUT används här.
+RATTELSER = {
+    "C1": "rättelse, EUT L 127, 23.5.2018, s. 2",
+    "C2": "rättelse, EUT L 74, 4.3.2021, s. 35",
+}
+RATT = " och ".join(RATTELSER[k] for k in sorted(RATTELSER))
+
+
+def lydelse_for(markor):
+    """Ordalydelsens ursprung för en given ▼-markör.
+
+    Okänd markör är ett hårt fel. Lägger EUR-Lex till en rättelse ska bygget
+    stanna, inte tysta märka lagrummet med fel EUT-referens."""
+    if markor == "B":
+        return "originallydelse"
+    if markor in RATTELSER:
+        return f"ändrad lydelse enligt {RATTELSER[markor]}"
+    raise SystemExit(
+        f"Okänd ändringsmarkör ▼{markor} i källan. Konsolideringen bär en "
+        f"rättelse eller ändring som inte finns i RATTELSER. Läs "
+        f"konsolideringens huvudtabell och lägg till referensen innan "
+        f"bygget körs vidare.")
 KONS = "konsoliderad text CELEX 02016R0679-20160504 (SV)"
 
 FORBEHALL = (
@@ -525,8 +549,7 @@ def generate():
         resolve(reg, st, terms, chapters)
         st["proveniens"] = {
             "autentisk_kalla": OJ,
-            "lydelse": ("originallydelse" if st["prov"] == "B"
-                        else f"ändrad lydelse enligt {RATT}"),
+            "lydelse": lydelse_for(st["prov"]),
             "markor": "▼" + st["prov"],
             "barare": KONS,
         }

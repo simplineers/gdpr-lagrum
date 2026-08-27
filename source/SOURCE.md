@@ -63,9 +63,9 @@ GDPR_SRC=nagon/annan/fil.html GDPR_ALLOW_UNPINNED=1 make all
 
 Den konsoliderade texten är ett dokumentationshjälpmedel utan rättslig verkan.
 Den autentiska källan är EUT L 119, 4.5.2016, s. 1, i lydelse enligt rättelse
-i EUT L 127, 23.5.2018, s. 16. Till EUT:s elektroniska utgåva hör en
+i EUT L 127, 23.5.2018, s. 2 och rättelse i EUT L 74, 4.3.2021, s. 35. Till EUT:s elektroniska utgåva hör en
 elektronisk signatur som garanterar äkthet, integritet och oföränderlighet,
 och som kan kontrolleras med Publikationsbyråns verktyg CheckLex eller ett
 tredjepartsverktyg som uppfyller de fastställda standarderna. En validering av
-signaturerna på L 119 och L 127 skulle sluta proveniensskedjan hela vägen från
+signaturerna på L 119, L 127 och L 74 skulle sluta proveniensskedjan hela vägen från
 ett verifierat lagrum till en kryptografiskt bekräftad autentisk källa.

@@ -5,7 +5,7 @@ Siffrorna i metoddokumentet hämtas ur genereringen, aldrig ur handpåläggning.
 Det gör att de inte kan bli gamla när generatorn ändras.
 """
 import os, statistics, collections
-from statements import generate, OJ, RATT, KONS
+from statements import generate, OJ, RATT, RATTELSER, KONS
 from parse import check_source, EXPECTED_SHA256
 import render as R
 
@@ -24,7 +24,7 @@ def main():
     kedja = sum(len(s["referenskedja"]) for s in sts)
     vag = collections.Counter(v["uttryck"] for s in sts
                               for v in s["vaga_hanvisningar"])
-    c1 = sum(1 for s in sts if s["proveniens"]["markor"] != "▼B")
+    per_markor = collections.Counter(s["proveniens"]["markor"] for s in sts)
     per_art = collections.Counter(s["artikel"] for s in sts)
     utan_ref = sum(1 for s in sts if not s["referenser"])
     nblock = sum(len(s["normtext"])
@@ -47,7 +47,8 @@ Dokumentet genereras av `metod.py` ur den faktiska körningen. Siffrorna nedan
 |---|---|
 | Rättsakt | Europaparlamentets och rådets förordning (EU) 2016/679 |
 | Autentisk källa | {OJ} |
-| Rättelse (svensk språkversion) | {RATT} |
+| Rättelse 1 (svensk språkversion) | {RATTELSER["C1"]}, markerad ▼C1 |
+| Rättelse 2 (svensk språkversion) | {RATTELSER["C2"]}, markerad ▼C2 |
 | Bärare av ordalydelsen | {KONS} |
 | Omfattning | Artiklarna 1–99 |
 
@@ -56,9 +57,18 @@ originaltexten med rättelsen införd. Konsoliderade texter saknar formellt
 rättsverkan och utgör enligt Publikationsbyrån endast dokumentationshjälpmedel.
 Därför anges i varje lagrum både den autentiska källan och rättelsen, samt
 huruvida det enskilda lagrummets ordalydelse är originalets eller rättelsens.
-Detta är möjligt eftersom den konsoliderade texten är märkt med `▼B`
-(originallydelse) respektive `▼C1` (lydelse enligt rättelsen). Av {len(sts)}
-lagrum har {c1} ändrad lydelse enligt rättelsen.
+Detta är möjligt eftersom den konsoliderade texten är märkt per textblock med
+vilken rättsakt lydelsen kommer från. Fördelningen över lagrummen:
+
+| Markör | Lydelsens ursprung | Lagrum |
+|---|---|---|
+| ▼B | originallydelse, {OJ} | {per_markor["▼B"]} |
+| ▼C1 | {RATTELSER["C1"]} | {per_markor["▼C1"]} |
+| ▼C2 | {RATTELSER["C2"]} | {per_markor["▼C2"]} |
+
+Kopplingen markör till rättsakt är hämtad ur konsolideringens egen huvudtabell,
+inte ur andrahandskällor. En markör som saknas i tabellen är ett hårt fel som
+stoppar bygget, så att ett lagrum aldrig kan märkas med fel EUT-referens.
 
 Skälen (1)–(173) ingår inte. De är tolkningsdata, inte bindande norm, och
 blandas medvetet inte in i normtexten.
