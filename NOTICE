@@ -50,7 +50,7 @@ Redovisade enligt CC BY 4.0 artikel 3 a 1 B.
   4. Text som en bestämmelse hänvisar till har återgetts i separata block
      efter normtexten, aldrig infogad i den.
   5. Definitioner ur artikel 4 har återgetts för de termer som förekommer.
-  6. Kursivering i EUT-texten återges i markdown-utgåvan med *emfas*.
+  6. Kursivering i EUT-texten återges i markdownutgåvorna med *emfas*.
 
 Ingen omskrivning, sammanfattning, förkortning, stavningsändring eller
 ändring av interpunktion har gjorts. Ordalydelsen är oförändrad och maskinellt
@@ -59,9 +59,27 @@ verifierad tecken för tecken mot källan. Se METOD.md avsnitt 4 och 8.
 Skälen (1)-(173) ingår inte i materialet.
 
 
+LICENSER I DETTA REPO
+=====================
+
+Repot innehåller två slags material med olika licens.
+
+Normtext samt genererade lagrumsfiler och samlingsutgåvor
+---------------------------------------------------------
+Derivat av EU:s konsoliderade text, som själv är CC BY 4.0. Materialet kan
+därför inte licensieras mer restriktivt och distribueras under samma villkor.
+
+  Creative Commons Erkännande 4.0 Internationell (CC BY 4.0). Se LICENSE.
+
 Generator, kontrollskript och METOD.md
 --------------------------------------
-(C) Simplineers AB, org.nr 559374-5986. Se LICENSE.
+(C) Simplineers AB, org.nr 559374-5986.
+
+  Apache License, version 2.0. Se LICENSE-CODE.
+
+Apache-2.0 används för koden eftersom Creative Commons-licenser inte är
+avsedda för mjukvara: de innehåller ingen patentupplåtelse och skiljer inte
+mellan käll- och binärform.
 
 
 Ansvarsbegränsning
