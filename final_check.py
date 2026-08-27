@@ -15,8 +15,11 @@ LAGRUM = os.environ.get("GDPR_LAGRUM", "lagrum")
 
 soup = BeautifulSoup(open(P.SRC, encoding="utf-8", errors="replace").read(),
                      "lxml")
+# Haystacken är artikeldelen plus fotnoterna. Fotnoterna ligger utanför
+# artikeldivarna men återges i lagrummen, så de måste ingå i kontrollen.
 full = " ".join(P.text_of(soup.find("div", id=f"art_{n}"))
                 for n in range(1, 100) if soup.find("div", id=f"art_{n}"))
+full += " " + " ".join(P.text_of(el) for el in soup.select("p.footnote"))
 full = re.sub(r"\s+", " ", full)
 assert "*" not in full, "källan innehåller asterisk – emfasborttagning osäker"
 
