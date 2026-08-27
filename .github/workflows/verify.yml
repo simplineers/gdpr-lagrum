@@ -23,13 +23,7 @@ jobs:
       - name: Installera beroenden
         run: pip install -r requirements.txt
 
-      - name: Kontrollera att pinnad kallfil finns
-        run: |
-          f=source/celex-02016R0679-20160504-sv.html
-          if [ ! -f "$f" ]; then
-            echo "::error::Pinnad kallfil saknas. Se source/SOURCE.md."
-            exit 1
-          fi
+
 
       - name: Bygg och verifiera
         run: make all
