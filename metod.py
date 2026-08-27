@@ -71,7 +71,8 @@ inte ur andrahandskällor. En markör som saknas i tabellen är ett hårt fel so
 stoppar bygget, så att ett lagrum aldrig kan märkas med fel EUT-referens.
 
 Skälen (1)–(173) ingår inte. De är tolkningsdata, inte bindande norm, och
-blandas medvetet inte in i normtexten.
+blandas medvetet inte in i normtexten. Det finns dessutom ett källhinder mot
+att lägga till dem — se avsnitt 7.
 
 ## 2. Lagrummets uppbyggnad
 
@@ -189,8 +190,19 @@ En definition injicerar aldrig sig själv.
   starkt oregelbunden form. Den kan också träffa en term som används i
   allmänspråklig snarare än legaldefinierad mening. Träffarna är därför alltid
   redovisade med artikelnummer så att en granskare kan avvisa dem.
-* **Skäl ingår inte.** Om skälen ska kopplas bör det ske som ett separat
-  lager med egen märkning, inte som del av normtexten.
+* **Skäl ingår inte, och kan inte läggas till med samma metod.** Utöver att
+  skälen är tolkningsdata och inte bindande norm finns ett källproblem som
+  den som vill komplettera bör känna till. Den konsoliderade texten innehåller
+  ingen ingress alls — EUR-Lex konsoliderar bara den normativa delen.
+  Originalpubliceringen (CELEX 32016R0679) innehåller skälen men ingen av de
+  två rättelserna. Och rättelserna ändrar bevisligen skältext: rådets
+  korrigendumdokument bakom 2021-rättelsen (ST-11744-2020-INIT) ändrar skäl i
+  flera språkversioner. Det finns därför ingen elektronisk källa som bär
+  korrigerade svenska skäl. Ett skällager kan alltså inte härledas maskinellt
+  ur en pinnad bärare på det sätt artikeldelen är, utan skulle kräva att
+  rättelserna tillämpas för hand och redovisas per skäl. Att i stället
+  publicera skälen i 2016 års lydelse skulle innebära att text som kan vara
+  överspelad läggs i ett material avsett att vara citerbart.
 * **Vaga hänvisningar löses inte upp.** Uttryck som ”unionsrätten” eller
   ”medlemsstaternas nationella rätt” pekar inte på ett bestämt instrument och
   kräver bedömning i det enskilda fallet. De förekommer så här ofta:
