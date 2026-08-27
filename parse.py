@@ -6,31 +6,92 @@ Enda tillåtna normalisering av normtext: NBSP (U+00A0) -> vanligt blanksteg,
 samt kollaps av HTML-radbrytningar/indentering till enkelt blanksteg.
 Ingen annan teckenändring sker. Verifieras av verify.py.
 """
-import re, json, os, sys, hashlib
+import re, json, os, sys, glob, hashlib
 from bs4 import BeautifulSoup, NavigableString, Tag
 
-# Indata pinnas med checksumma. Bygget vägrar starta mot en okänd källfil,
-# så att artefakterna aldrig kan härledas ur en annan version än den avsedda.
-SRC = os.environ.get("GDPR_SRC", "source/celex-02016R0679-20160504-sv.html")
+# Indata identifieras av sin checksumma, inte av sitt filnamn. Bygget letar
+# efter en HTML-fil i source/ vars SHA-256 matchar pinnen. Det gör att filen
+# kan heta vad som helst utan att bygget bryts, samtidigt som en fil med
+# avvikande innehåll aldrig kan smyga in.
 EXPECTED_SHA256 = "e182db01e290f2768224dc5e6acc042a97bef0592459bf886eb00831c35fab4c"
+PREFERRED_NAME = "celex-02016R0679-20160504-sv.html"
+SRC_DIR = os.environ.get("GDPR_SRC_DIR", "source")
+
+
+def _sha256(path):
+    h = hashlib.sha256()
+    with open(path, "rb") as fh:
+        for chunk in iter(lambda: fh.read(1 << 20), b""):
+            h.update(chunk)
+    return h.hexdigest()
+
+
+def _candidates():
+    env = os.environ.get("GDPR_SRC")
+    if env:
+        return [env]
+    return sorted(glob.glob(os.path.join(SRC_DIR, "*.html")))
+
+
+def _resolve():
+    """Returnerar (sökväg, sha256, granskade) för kandidaten som matchar pinnen."""
+    found = []
+    for p in _candidates():
+        if not os.path.isfile(p):
+            continue
+        h = _sha256(p)
+        found.append((p, h))
+        if h == EXPECTED_SHA256:
+            return p, h, found
+    return None, None, found
+
+
+_p, _h, _ = _resolve()
+# SRC är den upplösta källan när den finns, annars det rekommenderade namnet
+# så att felmeddelandet blir begripligt.
+SRC = _p or os.environ.get("GDPR_SRC") or os.path.join(SRC_DIR, PREFERRED_NAME)
 
 
 def check_source(path=None):
-    path = path or SRC
-    if not os.path.exists(path):
-        sys.exit(f"Källfilen saknas: {path}\n"
-                 f"Se source/SOURCE.md för hur den hämtas.")
-    got = hashlib.sha256(open(path, "rb").read()).hexdigest()
-    if got == EXPECTED_SHA256:
-        return got
-    if os.environ.get("GDPR_ALLOW_UNPINNED") == "1":
-        sys.stderr.write(f"VARNING: opinnad källa. Förväntat "
-                         f"{EXPECTED_SHA256}, fick {got}\n")
-        return got
-    sys.exit(f"Källfilens checksumma stämmer inte.\n"
-             f"  förväntat: {EXPECTED_SHA256}\n"
-             f"  fick:      {got}\n"
-             f"Sätt GDPR_ALLOW_UNPINNED=1 för att bygga ändå.")
+    """Verifierar indata mot pinnen. Avbryter bygget vid avvikelse."""
+    global SRC
+    if path:
+        got = _sha256(path) if os.path.isfile(path) else None
+        if got == EXPECTED_SHA256:
+            SRC = path
+            return got
+        found = [(path, got)] if got else []
+    else:
+        p, got, found = _resolve()
+        if p:
+            SRC = p
+            return got
+
+    if os.environ.get("GDPR_ALLOW_UNPINNED") == "1" and found:
+        SRC = found[0][0]
+        sys.stderr.write(
+            f"VARNING: opinnad källa {SRC}\n"
+            f"  förväntat: {EXPECTED_SHA256}\n"
+            f"  fick:      {found[0][1]}\n")
+        return found[0][1]
+
+    env = os.environ.get("GDPR_SRC")
+    if env:
+        rader = [f"GDPR_SRC pekar på {env}, som inte matchar pinnen."]
+    else:
+        rader = [f"Ingen HTML-fil i {SRC_DIR}/ matchar pinnen."]
+    rader.append(f"  förväntad SHA-256: {EXPECTED_SHA256}")
+    if found:
+        rader.append("  granskade filer:")
+        rader += [f"    {h}  {p}" for p, h in found]
+    elif env:
+        rader.append(f"  filen finns inte: {env}")
+    else:
+        rader.append(f"  inga HTML-filer hittades i {SRC_DIR}/")
+    rader += [f"Se {SRC_DIR}/SOURCE.md för hur källan hämtas.",
+              "Sätt GDPR_ALLOW_UNPINNED=1 för att bygga ändå."]
+    sys.exit("\n".join(rader))
+
 
 # ----------------------------------------------------------------- textextraktion
 
