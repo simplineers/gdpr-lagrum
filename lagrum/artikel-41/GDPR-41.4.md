@@ -40,6 +40,10 @@ Artikel 4 inledning:
 
 > *tillsynsmyndighet*: en oberoende offentlig myndighet som är utsedd av en medlemsstat i enlighet med artikel 51,
 
+*artikel 4.22*
+
+> *berörd tillsynsmyndighet*: en tillsynsmyndighet som berörs av behandlingen av personuppgifter på grund av att
+
 ## Pekare (återges inte i sin helhet)
 
 - kapitel VIII – Rättsmedel, ansvar och sanktioner  ·  hänvisning: ”kapitel VIII”

@@ -40,6 +40,10 @@ Artikel 4 inledning:
 
 > I denna förordning avses med
 
+*artikel 4.16*
+
+> *huvudsakligt verksamhetsställe*:
+
 *artikel 4.21*
 
 > *tillsynsmyndighet*: en oberoende offentlig myndighet som är utsedd av en medlemsstat i enlighet med artikel 51,

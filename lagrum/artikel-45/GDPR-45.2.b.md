@@ -27,6 +27,10 @@ Artikel 4 inledning:
 
 > *tillsynsmyndighet*: en oberoende offentlig myndighet som är utsedd av en medlemsstat i enlighet med artikel 51,
 
+*artikel 4.26*
+
+> *internationell organisation*: en organisation och dess underställda organ som lyder under folkrätten, eller ett annat organ som inrättats genom eller på grundval av en överenskommelse mellan två eller flera länder.
+
 ## Förbehåll
 
 Utdraget avser ett enskilt lagrum i förordning (EU) 2016/679. Normtexten återges ordagrant. Förordningen ska tolkas som en helhet och mot bakgrund av sina skäl; utdraget ersätter inte en fullständig rättslig bedömning. Nationell rätt kan komplettera eller precisera tillämpningen.

@@ -17,6 +17,10 @@
 
 > *informationssamhällets tjänster*: alla tjänster enligt definitionen i artikel 1.1 b i Europaparlamentets och rådets direktiv (EU) 2015/1535 ( 1 ),
 
+## Fotnoter i normtexten (ordagrant)
+
+> ( 1 ) Europaparlamentets och rådets direktiv (EU) 2015/1535 av den 9 september 2015 om ett informationsförfarande beträffande tekniska föreskrifter och beträffande föreskrifter för informationssamhällets tjänster (EUT L 241, 17.9.2015, s. 1).
+
 ## Externa instrument (återges inte)
 
 - ”artikel 1.1 b” i Europaparlamentets och rådets direktiv (EU) 2015/1535

@@ -47,6 +47,10 @@ Artikel 4 inledning:
 - artikel 55 – Behörighet  ·  hänvisning: ”artikel 55 eller 56”
 - artikel 56 – Den ansvariga tillsynsmyndighetens behörighet  ·  hänvisning: ”artikel 55 eller 56”
 
+## Fotnoter i normtexten (ordagrant)
+
+> ( 2 ) Europaparlamentets och rådets förordning (EG) nr 765/2008 av den 9 juli 2008 om krav för ackreditering och marknadskontroll i samband med saluföring av produkter och upphävande av förordning (EEG) nr 339/93 (EUT L 218, 13.8.2008, s. 30).
+
 ## Referenskedja (djup 2 — redovisad, ej infogad)
 
 - artikel 58.2 led h → artikel 42

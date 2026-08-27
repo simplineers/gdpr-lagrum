@@ -82,6 +82,10 @@ Artikel 4 inledning:
 - artikel 56 – Den ansvariga tillsynsmyndighetens behörighet  ·  hänvisning: ”artikel 55 eller 56,”
 - artikel 63 – Mekanism för enhetlighet  ·  hänvisning: ”artikel 63”
 
+## Fotnoter i normtexten (ordagrant)
+
+> ( 2 ) Europaparlamentets och rådets förordning (EG) nr 765/2008 av den 9 juli 2008 om krav för ackreditering och marknadskontroll i samband med saluföring av produkter och upphävande av förordning (EEG) nr 339/93 (EUT L 218, 13.8.2008, s. 30).
+
 ## Vaga hänvisningar
 
 - ”denna artikel” — hänvisar till artikeln som helhet

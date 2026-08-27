@@ -39,6 +39,10 @@ Artikel 4 inledning:
 
 > *tillsynsmyndighet*: en oberoende offentlig myndighet som är utsedd av en medlemsstat i enlighet med artikel 51,
 
+*artikel 4.26*
+
+> *internationell organisation*: en organisation och dess underställda organ som lyder under folkrätten, eller ett annat organ som inrättats genom eller på grundval av en överenskommelse mellan två eller flera länder.
+
 ## Pekare (återges inte i sin helhet)
 
 - kapitel II – Principer  ·  hänvisning: ”kapitel II”

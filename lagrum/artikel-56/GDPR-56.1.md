@@ -28,6 +28,10 @@ Artikel 4 inledning:
 
 > *personuppgiftsbiträde*: en fysisk eller juridisk person, offentlig myndighet, institution eller annat organ som behandlar personuppgifter för den personuppgiftsansvariges räkning,
 
+*artikel 4.16*
+
+> *huvudsakligt verksamhetsställe*:
+
 *artikel 4.21*
 
 > *tillsynsmyndighet*: en oberoende offentlig myndighet som är utsedd av en medlemsstat i enlighet med artikel 51,

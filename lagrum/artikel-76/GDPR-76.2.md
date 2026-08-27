@@ -28,6 +28,10 @@ Artikel 4 inledning:
 
 > *företrädare*: en i unionen etablerad fysisk eller juridisk person som skriftligen har utsetts av den personuppgiftsansvarige eller personuppgiftsbiträdet i enlighet med artikel 27 och företräder denne i frågor som gäller dennes skyldigheter enligt denna förordning,
 
+## Fotnoter i normtexten (ordagrant)
+
+> ( 3 ) Europaparlamentets och rådets förordning (EG) nr 1049/2001 av den 30 maj 2001 om allmänhetens tillgång till Europaparlamentets, rådets och kommissionens handlingar (EGT L 145, 31.5.2001, s. 43).
+
 ## Förbehåll
 
 Utdraget avser ett enskilt lagrum i förordning (EU) 2016/679. Normtexten återges ordagrant. Förordningen ska tolkas som en helhet och mot bakgrund av sina skäl; utdraget ersätter inte en fullständig rättslig bedömning. Nationell rätt kan komplettera eller precisera tillämpningen.

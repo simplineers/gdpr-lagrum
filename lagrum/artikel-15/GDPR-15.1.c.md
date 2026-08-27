@@ -36,6 +36,10 @@ Artikel 4 inledning:
 
 > *mottagare*: en fysisk eller juridisk person, offentlig myndighet, institution eller annat organ till vilket personuppgifterna utlämnas, vare sig det är en tredje part eller inte; offentliga myndigheter som kan komma att motta personuppgifter inom ramen för ett särskilt uppdrag i enlighet med unionsrätten eller medlemsstaternas nationella rätt ska dock inte betraktas som mottagare; offentliga myndigheters behandling av dessa uppgifter ska vara förenlig med tillämpliga bestämmelser för dataskydd beroende på behandlingens syfte,
 
+*artikel 4.26*
+
+> *internationell organisation*: en organisation och dess underställda organ som lyder under folkrätten, eller ett annat organ som inrättats genom eller på grundval av en överenskommelse mellan två eller flera länder.
+
 ## Förbehåll
 
 Utdraget avser ett enskilt lagrum i förordning (EU) 2016/679. Normtexten återges ordagrant. Förordningen ska tolkas som en helhet och mot bakgrund av sina skäl; utdraget ersätter inte en fullständig rättslig bedömning. Nationell rätt kan komplettera eller precisera tillämpningen.

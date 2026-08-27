@@ -24,6 +24,10 @@ Artikel 4 inledning:
 
 > *behandling*: en åtgärd eller kombination av åtgärder beträffande personuppgifter eller uppsättningar av personuppgifter, oberoende av om de utförs automatiserat eller ej, såsom insamling, registrering, organisering, strukturering, lagring, bearbetning eller ändring, framtagning, läsning, användning, utlämning genom överföring, spridning eller tillhandahållande på annat sätt, justering eller sammanförande, begränsning, radering eller förstöring,
 
+*artikel 4.26*
+
+> *internationell organisation*: en organisation och dess underställda organ som lyder under folkrätten, eller ett annat organ som inrättats genom eller på grundval av en överenskommelse mellan två eller flera länder.
+
 ## Förbehåll
 
 Utdraget avser ett enskilt lagrum i förordning (EU) 2016/679. Normtexten återges ordagrant. Förordningen ska tolkas som en helhet och mot bakgrund av sina skäl; utdraget ersätter inte en fullständig rättslig bedömning. Nationell rätt kan komplettera eller precisera tillämpningen.

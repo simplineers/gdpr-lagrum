@@ -24,9 +24,13 @@ Artikel 4 inledning:
 
 > I denna förordning avses med
 
-*artikel 4.21*
+*artikel 4.16*
 
-> *tillsynsmyndighet*: en oberoende offentlig myndighet som är utsedd av en medlemsstat i enlighet med artikel 51,
+> *huvudsakligt verksamhetsställe*:
+
+*artikel 4.22*
+
+> *berörd tillsynsmyndighet*: en tillsynsmyndighet som berörs av behandlingen av personuppgifter på grund av att
 
 ## Vaga hänvisningar
 

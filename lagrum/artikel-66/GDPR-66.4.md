@@ -56,6 +56,10 @@ Artikel 4 inledning:
 
 > *tillsynsmyndighet*: en oberoende offentlig myndighet som är utsedd av en medlemsstat i enlighet med artikel 51,
 
+*artikel 4.22*
+
+> *berörd tillsynsmyndighet*: en tillsynsmyndighet som berörs av behandlingen av personuppgifter på grund av att
+
 ## Referenskedja (djup 2 — redovisad, ej infogad)
 
 - artikel 64.3 → artikel 64.1
