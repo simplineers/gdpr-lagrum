@@ -1,5 +1,10 @@
+# Samlingsutgåvorna byggs i CI och läggs som release-assets.
 dist/
-tree.json
+
+# lagrum/ och METOD.md är genererade men versionshanteras avsiktligt, så att
+# varje omgenerering ger en granskningsbar diff per lagrum. De ignoreras inte.
+# make sync failar om de inte är aktuella.
+
 __pycache__/
 *.pyc
 .venv/
