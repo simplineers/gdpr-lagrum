@@ -88,3 +88,16 @@ Ansvarsbegränsning
 Materialet är ett utdrag ur gällande rätt och ersätter inte en rättslig
 bedömning. Förordningen ska tolkas som en helhet och mot bakgrund av sina
 skäl. Nationell rätt kan komplettera eller precisera tillämpningen.
+
+HISTORIK
+========
+Repots git-historik innehåller commits där filer låg i source/ som senare
+tagits bort ur trädet: en PDF-kopia av den konsoliderade texten samt den
+katalog med sidomaterial som följde med när källsidan sparades som komplett
+webbsida. Sidomaterialet innehåller tredjepartskod - bland annat jQuery,
+Bootstrap, Font Awesome och en analysagent - som inte omfattas av någon av
+licenserna i detta repo och som inte har någon funktion i bygget.
+
+Filerna finns inte i någon nuvarande version men går fortfarande att hämta via
+de commit-identifierare där de låg. De redovisas här hellre än att förtigas.
+Upphovsratten till dem tillhor respektive rattighetshavare.
