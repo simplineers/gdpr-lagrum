@@ -10,9 +10,9 @@ import re, json, os, sys, glob, hashlib
 from bs4 import BeautifulSoup, NavigableString, Tag
 
 # Indata identifieras av sin checksumma, inte av sitt filnamn. Bygget letar
-# efter en HTML-fil i source/ vars SHA-256 matchar pinnen. Det gör att filen
-# kan heta vad som helst utan att bygget bryts, samtidigt som en fil med
-# avvikande innehåll aldrig kan smyga in.
+# efter en fil i source/ vars SHA-256 matchar pinnen. Det gör att filen kan
+# heta vad som helst utan att bygget bryts, samtidigt som en fil med avvikande
+# innehåll aldrig kan smyga in.
 EXPECTED_SHA256 = "e182db01e290f2768224dc5e6acc042a97bef0592459bf886eb00831c35fab4c"
 PREFERRED_NAME = "celex-02016R0679-20160504-sv.html"
 SRC_DIR = os.environ.get("GDPR_SRC_DIR", "source")
@@ -27,10 +27,32 @@ def _sha256(path):
 
 
 def _candidates():
+    """Alla filer i source/ utom dokumentation. Avsiktligt inte begränsat till
+    *.html: en källfil som råkat tappa sin filändelse ska ändå granskas och
+    rapporteras, inte tigande förbises."""
     env = os.environ.get("GDPR_SRC")
     if env:
         return [env]
-    return sorted(glob.glob(os.path.join(SRC_DIR, "*.html")))
+    return [p for p in sorted(glob.glob(os.path.join(SRC_DIR, "*")))
+            if os.path.isfile(p) and not p.lower().endswith(".md")]
+
+
+def _hint(path):
+    """Pekar ut de vanligaste orsakerna till att en i övrigt riktig källfil
+    inte matchar pinnen."""
+    try:
+        data = open(path, "rb").read()
+    except OSError:
+        return None
+    if (data.endswith(b"\n")
+            and hashlib.sha256(data[:-1]).hexdigest() == EXPECTED_SHA256):
+        return ("matchar pinnen så nära som en tillagd avslutande radbrytning "
+                "– filen har troligen sparats via en webbeditor")
+    if (b"\r\n" in data
+            and hashlib.sha256(data.replace(b"\r\n", b"\n")).hexdigest()
+            == EXPECTED_SHA256):
+        return "matchar pinnen om radslut normaliseras från CRLF till LF"
+    return None
 
 
 def _resolve():
@@ -79,15 +101,19 @@ def check_source(path=None):
     if env:
         rader = [f"GDPR_SRC pekar på {env}, som inte matchar pinnen."]
     else:
-        rader = [f"Ingen HTML-fil i {SRC_DIR}/ matchar pinnen."]
+        rader = [f"Ingen fil i {SRC_DIR}/ matchar pinnen."]
     rader.append(f"  förväntad SHA-256: {EXPECTED_SHA256}")
     if found:
         rader.append("  granskade filer:")
-        rader += [f"    {h}  {p}" for p, h in found]
+        for fp, fh in found:
+            rader.append(f"    {fh}  {fp}")
+            h = _hint(fp)
+            if h:
+                rader.append(f"      ^ {h}")
     elif env:
         rader.append(f"  filen finns inte: {env}")
     else:
-        rader.append(f"  inga HTML-filer hittades i {SRC_DIR}/")
+        rader.append(f"  inga filer hittades i {SRC_DIR}/")
     rader += [f"Se {SRC_DIR}/SOURCE.md för hur källan hämtas.",
               "Sätt GDPR_ALLOW_UNPINNED=1 för att bygga ändå."]
     sys.exit("\n".join(rader))
