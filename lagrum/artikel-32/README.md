@@ -1,6 +1,7 @@
 # Artikel 32 – Säkerhet i samband med behandlingen
 
 **Kapitel:** KAPITEL IV – Personuppgiftsansvarig och personuppgiftsbiträde  
+**Avsnitt:** Avsnitt 2 – Säkerhet för personuppgifter  
 **Lagrum i artikeln:** 7
 
 | Lagrum | Nivå | Normtext |

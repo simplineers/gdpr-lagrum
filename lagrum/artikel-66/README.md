@@ -1,6 +1,7 @@
 # Artikel 66 – Skyndsamt förfarande
 
 **Kapitel:** KAPITEL VII – Samarbete och enhetlighet  
+**Avsnitt:** Avsnitt 2 – Enhetlighet  
 **Lagrum i artikeln:** 4
 
 | Lagrum | Nivå | Normtext |

@@ -1,6 +1,7 @@
 # Artikel 65 – Tvistlösning genom styrelsen
 
 **Kapitel:** KAPITEL VII – Samarbete och enhetlighet  
+**Avsnitt:** Avsnitt 2 – Enhetlighet  
 **Lagrum i artikeln:** 8
 
 | Lagrum | Nivå | Normtext |

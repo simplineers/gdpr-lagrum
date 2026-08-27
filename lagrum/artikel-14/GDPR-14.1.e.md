@@ -3,6 +3,7 @@
 *artikel 14.1 led e*
 
 **Kapitel:** KAPITEL III – Den registrerades rättigheter  
+**Avsnitt:** Avsnitt 2 – Information och tillgång till personuppgifter  
 **Artikel:** 14 – Information som ska tillhandahållas om personuppgifterna inte har erhållits från den registrerade  
 **Nivå:** artikel 14.1 led e  
 **Proveniens:** EUT L 119, 4.5.2016, s. 1, originallydelse (▼B). Bärare: konsoliderad text CELEX 02016R0679-20160504 (SV).

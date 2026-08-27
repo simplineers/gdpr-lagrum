@@ -1,6 +1,7 @@
 # Artikel 26 – Gemensamt personuppgiftsansvariga
 
 **Kapitel:** KAPITEL IV – Personuppgiftsansvarig och personuppgiftsbiträde  
+**Avsnitt:** Avsnitt 1 – Allmänna skyldigheter  
 **Lagrum i artikeln:** 3
 
 | Lagrum | Nivå | Normtext |

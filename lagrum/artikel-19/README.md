@@ -1,6 +1,7 @@
 # Artikel 19 – Anmälningsskyldighet avseende rättelse eller radering av personuppgifter och begränsning av behandling
 
 **Kapitel:** KAPITEL III – Den registrerades rättigheter  
+**Avsnitt:** Avsnitt 3 – Rättelse och radering  
 **Lagrum i artikeln:** 1
 
 | Lagrum | Nivå | Normtext |

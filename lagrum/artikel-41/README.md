@@ -1,6 +1,7 @@
 # Artikel 41 – Övervakning av godkända uppförandekoder
 
 **Kapitel:** KAPITEL IV – Personuppgiftsansvarig och personuppgiftsbiträde  
+**Avsnitt:** Avsnitt 5 – Uppförandekod och certifiering  
 **Lagrum i artikeln:** 9
 
 | Lagrum | Nivå | Normtext |

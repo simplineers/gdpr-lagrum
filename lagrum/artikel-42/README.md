@@ -1,6 +1,7 @@
 # Artikel 42 – Certifiering
 
 **Kapitel:** KAPITEL IV – Personuppgiftsansvarig och personuppgiftsbiträde  
+**Avsnitt:** Avsnitt 5 – Uppförandekod och certifiering  
 **Lagrum i artikeln:** 8
 
 | Lagrum | Nivå | Normtext |

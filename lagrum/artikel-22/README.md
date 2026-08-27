@@ -1,6 +1,7 @@
 # Artikel 22 – Automatiserat individuellt beslutsfattande, inbegripet profilering
 
 **Kapitel:** KAPITEL III – Den registrerades rättigheter  
+**Avsnitt:** Avsnitt 4 – Rätt att göra invändningar och automatiserat individuellt beslutsfattande  
 **Lagrum i artikeln:** 6
 
 | Lagrum | Nivå | Normtext |

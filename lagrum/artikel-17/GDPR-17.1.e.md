@@ -3,6 +3,7 @@
 *artikel 17.1 led e*
 
 **Kapitel:** KAPITEL III – Den registrerades rättigheter  
+**Avsnitt:** Avsnitt 3 – Rättelse och radering  
 **Artikel:** 17 – Rätt till radering (”rätten att bli bortglömd”)  
 **Nivå:** artikel 17.1 led e  
 **Proveniens:** EUT L 119, 4.5.2016, s. 1, originallydelse (▼B). Bärare: konsoliderad text CELEX 02016R0679-20160504 (SV).

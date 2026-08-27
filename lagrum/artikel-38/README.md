@@ -1,6 +1,7 @@
 # Artikel 38 – Dataskyddsombudets ställning
 
 **Kapitel:** KAPITEL IV – Personuppgiftsansvarig och personuppgiftsbiträde  
+**Avsnitt:** Avsnitt 4 – Dataskyddsombud  
 **Lagrum i artikeln:** 6
 
 | Lagrum | Nivå | Normtext |

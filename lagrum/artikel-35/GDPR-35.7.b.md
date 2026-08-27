@@ -3,6 +3,7 @@
 *artikel 35.7 led b*
 
 **Kapitel:** KAPITEL IV – Personuppgiftsansvarig och personuppgiftsbiträde  
+**Avsnitt:** Avsnitt 3 – Konsekvensbedömning avseende dataskydd samt föregående samråd  
 **Artikel:** 35 – Konsekvensbedömning avseende dataskydd  
 **Nivå:** artikel 35.7 led b  
 **Proveniens:** EUT L 119, 4.5.2016, s. 1, originallydelse (▼B). Bärare: konsoliderad text CELEX 02016R0679-20160504 (SV).

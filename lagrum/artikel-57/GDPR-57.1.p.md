@@ -3,6 +3,7 @@
 *artikel 57.1 led p*
 
 **Kapitel:** KAPITEL VI – Oberoende tillsynsmyndigheter  
+**Avsnitt:** Avsnitt 2 – Behörighet, uppgifter och befogenheter  
 **Artikel:** 57 – Uppgifter  
 **Nivå:** artikel 57.1 led p  
 **Proveniens:** EUT L 119, 4.5.2016, s. 1, ändrad lydelse enligt rättelse, EUT L 127, 23.5.2018, s. 2 (▼C1). Bärare: konsoliderad text CELEX 02016R0679-20160504 (SV).

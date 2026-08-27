@@ -3,6 +3,7 @@
 *artikel 75.6 led e*
 
 **Kapitel:** KAPITEL VII – Samarbete och enhetlighet  
+**Avsnitt:** Avsnitt 3 – Europeiska dataskyddsstyrelsen  
 **Artikel:** 75 – Sekretariatet  
 **Nivå:** artikel 75.6 led e  
 **Proveniens:** EUT L 119, 4.5.2016, s. 1, originallydelse (▼B). Bärare: konsoliderad text CELEX 02016R0679-20160504 (SV).

@@ -3,6 +3,7 @@
 *artikel 26.2*
 
 **Kapitel:** KAPITEL IV – Personuppgiftsansvarig och personuppgiftsbiträde  
+**Avsnitt:** Avsnitt 1 – Allmänna skyldigheter  
 **Artikel:** 26 – Gemensamt personuppgiftsansvariga  
 **Nivå:** artikel 26.2  
 **Proveniens:** EUT L 119, 4.5.2016, s. 1, originallydelse (▼B). Bärare: konsoliderad text CELEX 02016R0679-20160504 (SV).

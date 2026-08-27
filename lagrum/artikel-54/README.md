@@ -1,6 +1,7 @@
 # Artikel 54 – Regler för inrättandet av en tillsynsmyndighet
 
 **Kapitel:** KAPITEL VI – Oberoende tillsynsmyndigheter  
+**Avsnitt:** Avsnitt 1 – Oberoende ställning  
 **Lagrum i artikeln:** 7
 
 | Lagrum | Nivå | Normtext |

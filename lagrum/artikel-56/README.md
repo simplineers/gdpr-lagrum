@@ -1,6 +1,7 @@
 # Artikel 56 – Den ansvariga tillsynsmyndighetens behörighet
 
 **Kapitel:** KAPITEL VI – Oberoende tillsynsmyndigheter  
+**Avsnitt:** Avsnitt 2 – Behörighet, uppgifter och befogenheter  
 **Lagrum i artikeln:** 6
 
 | Lagrum | Nivå | Normtext |

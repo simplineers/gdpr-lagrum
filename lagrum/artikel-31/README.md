@@ -1,6 +1,7 @@
 # Artikel 31 – Samarbete med tillsynsmyndigheten
 
 **Kapitel:** KAPITEL IV – Personuppgiftsansvarig och personuppgiftsbiträde  
+**Avsnitt:** Avsnitt 1 – Allmänna skyldigheter  
 **Lagrum i artikeln:** 1
 
 | Lagrum | Nivå | Normtext |

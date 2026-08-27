@@ -3,6 +3,7 @@
 *artikel 54.1 led d*
 
 **Kapitel:** KAPITEL VI – Oberoende tillsynsmyndigheter  
+**Avsnitt:** Avsnitt 1 – Oberoende ställning  
 **Artikel:** 54 – Regler för inrättandet av en tillsynsmyndighet  
 **Nivå:** artikel 54.1 led d  
 **Proveniens:** EUT L 119, 4.5.2016, s. 1, originallydelse (▼B). Bärare: konsoliderad text CELEX 02016R0679-20160504 (SV).

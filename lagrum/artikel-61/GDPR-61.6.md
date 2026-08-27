@@ -3,6 +3,7 @@
 *artikel 61.6*
 
 **Kapitel:** KAPITEL VII – Samarbete och enhetlighet  
+**Avsnitt:** Avsnitt 1 – Samarbete  
 **Artikel:** 61 – Ömsesidigt bistånd  
 **Nivå:** artikel 61.6  
 **Proveniens:** EUT L 119, 4.5.2016, s. 1, originallydelse (▼B). Bärare: konsoliderad text CELEX 02016R0679-20160504 (SV).

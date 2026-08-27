@@ -3,6 +3,7 @@
 *artikel 54.2*
 
 **Kapitel:** KAPITEL VI – Oberoende tillsynsmyndigheter  
+**Avsnitt:** Avsnitt 1 – Oberoende ställning  
 **Artikel:** 54 – Regler för inrättandet av en tillsynsmyndighet  
 **Nivå:** artikel 54.2  
 **Proveniens:** EUT L 119, 4.5.2016, s. 1, ändrad lydelse enligt rättelse, EUT L 127, 23.5.2018, s. 2 (▼C1). Bärare: konsoliderad text CELEX 02016R0679-20160504 (SV).

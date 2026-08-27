@@ -3,6 +3,7 @@
 *artikel 33.5*
 
 **Kapitel:** KAPITEL IV – Personuppgiftsansvarig och personuppgiftsbiträde  
+**Avsnitt:** Avsnitt 2 – Säkerhet för personuppgifter  
 **Artikel:** 33 – Anmälan av en personuppgiftsincident till tillsynsmyndigheten  
 **Nivå:** artikel 33.5  
 **Proveniens:** EUT L 119, 4.5.2016, s. 1, originallydelse (▼B). Bärare: konsoliderad text CELEX 02016R0679-20160504 (SV).

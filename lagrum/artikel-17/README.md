@@ -1,6 +1,7 @@
 # Artikel 17 – Rätt till radering (”rätten att bli bortglömd”)
 
 **Kapitel:** KAPITEL III – Den registrerades rättigheter  
+**Avsnitt:** Avsnitt 3 – Rättelse och radering  
 **Lagrum i artikeln:** 12
 
 | Lagrum | Nivå | Normtext |

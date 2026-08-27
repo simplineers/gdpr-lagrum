@@ -3,6 +3,7 @@
 *artikel 27.4*
 
 **Kapitel:** KAPITEL IV – Personuppgiftsansvarig och personuppgiftsbiträde  
+**Avsnitt:** Avsnitt 1 – Allmänna skyldigheter  
 **Artikel:** 27 – Företrädare för personuppgiftsansvariga eller personuppgiftsbiträden som inte är etablerade i unionen  
 **Nivå:** artikel 27.4  
 **Proveniens:** EUT L 119, 4.5.2016, s. 1, originallydelse (▼B). Bärare: konsoliderad text CELEX 02016R0679-20160504 (SV).

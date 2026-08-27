@@ -1,6 +1,7 @@
 # Artikel 30 – Register över behandling
 
 **Kapitel:** KAPITEL IV – Personuppgiftsansvarig och personuppgiftsbiträde  
+**Avsnitt:** Avsnitt 1 – Allmänna skyldigheter  
 **Lagrum i artikeln:** 14
 
 | Lagrum | Nivå | Normtext |

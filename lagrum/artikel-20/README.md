@@ -1,6 +1,7 @@
 # Artikel 20 – Rätt till dataportabilitet
 
 **Kapitel:** KAPITEL III – Den registrerades rättigheter  
+**Avsnitt:** Avsnitt 3 – Rättelse och radering  
 **Lagrum i artikeln:** 5
 
 | Lagrum | Nivå | Normtext |

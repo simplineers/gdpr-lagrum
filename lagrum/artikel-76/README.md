@@ -1,6 +1,7 @@
 # Artikel 76 – Konfidentialitet
 
 **Kapitel:** KAPITEL VII – Samarbete och enhetlighet  
+**Avsnitt:** Avsnitt 3 – Europeiska dataskyddsstyrelsen  
 **Lagrum i artikeln:** 2
 
 | Lagrum | Nivå | Normtext |

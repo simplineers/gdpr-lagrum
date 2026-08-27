@@ -3,6 +3,7 @@
 *artikel 29*
 
 **Kapitel:** KAPITEL IV – Personuppgiftsansvarig och personuppgiftsbiträde  
+**Avsnitt:** Avsnitt 1 – Allmänna skyldigheter  
 **Artikel:** 29 – Behandling under den personuppgiftsansvariges eller personuppgiftsbiträdets överinseende  
 **Nivå:** artikel 29  
 **Proveniens:** EUT L 119, 4.5.2016, s. 1, originallydelse (▼B). Bärare: konsoliderad text CELEX 02016R0679-20160504 (SV).

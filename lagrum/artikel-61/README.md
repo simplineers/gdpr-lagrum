@@ -1,6 +1,7 @@
 # Artikel 61 – Ömsesidigt bistånd
 
 **Kapitel:** KAPITEL VII – Samarbete och enhetlighet  
+**Avsnitt:** Avsnitt 1 – Samarbete  
 **Lagrum i artikeln:** 10
 
 | Lagrum | Nivå | Normtext |

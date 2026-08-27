@@ -1,6 +1,7 @@
 # Artikel 75 – Sekretariatet
 
 **Kapitel:** KAPITEL VII – Samarbete och enhetlighet  
+**Avsnitt:** Avsnitt 3 – Europeiska dataskyddsstyrelsen  
 **Lagrum i artikeln:** 12
 
 | Lagrum | Nivå | Normtext |

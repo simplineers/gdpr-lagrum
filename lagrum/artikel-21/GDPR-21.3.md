@@ -3,6 +3,7 @@
 *artikel 21.3*
 
 **Kapitel:** KAPITEL III – Den registrerades rättigheter  
+**Avsnitt:** Avsnitt 4 – Rätt att göra invändningar och automatiserat individuellt beslutsfattande  
 **Artikel:** 21 – Rätt att göra invändningar  
 **Nivå:** artikel 21.3  
 **Proveniens:** EUT L 119, 4.5.2016, s. 1, originallydelse (▼B). Bärare: konsoliderad text CELEX 02016R0679-20160504 (SV).

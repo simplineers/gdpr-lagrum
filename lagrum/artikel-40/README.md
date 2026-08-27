@@ -1,6 +1,7 @@
 # Artikel 40 – Uppförandekoder
 
 **Kapitel:** KAPITEL IV – Personuppgiftsansvarig och personuppgiftsbiträde  
+**Avsnitt:** Avsnitt 5 – Uppförandekod och certifiering  
 **Lagrum i artikeln:** 21
 
 | Lagrum | Nivå | Normtext |

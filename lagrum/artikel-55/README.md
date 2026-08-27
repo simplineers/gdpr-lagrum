@@ -1,6 +1,7 @@
 # Artikel 55 – Behörighet
 
 **Kapitel:** KAPITEL VI – Oberoende tillsynsmyndigheter  
+**Avsnitt:** Avsnitt 2 – Behörighet, uppgifter och befogenheter  
 **Lagrum i artikeln:** 3
 
 | Lagrum | Nivå | Normtext |

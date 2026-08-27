@@ -1,6 +1,7 @@
 # Artikel 64 – Yttrande från Styrelsen
 
 **Kapitel:** KAPITEL VII – Samarbete och enhetlighet  
+**Avsnitt:** Avsnitt 2 – Enhetlighet  
 **Lagrum i artikeln:** 14
 
 | Lagrum | Nivå | Normtext |

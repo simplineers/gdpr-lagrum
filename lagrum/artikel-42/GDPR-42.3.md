@@ -3,6 +3,7 @@
 *artikel 42.3*
 
 **Kapitel:** KAPITEL IV – Personuppgiftsansvarig och personuppgiftsbiträde  
+**Avsnitt:** Avsnitt 5 – Uppförandekod och certifiering  
 **Artikel:** 42 – Certifiering  
 **Nivå:** artikel 42.3  
 **Proveniens:** EUT L 119, 4.5.2016, s. 1, originallydelse (▼B). Bärare: konsoliderad text CELEX 02016R0679-20160504 (SV).

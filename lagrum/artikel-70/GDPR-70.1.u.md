@@ -3,6 +3,7 @@
 *artikel 70.1 led u*
 
 **Kapitel:** KAPITEL VII – Samarbete och enhetlighet  
+**Avsnitt:** Avsnitt 3 – Europeiska dataskyddsstyrelsen  
 **Artikel:** 70 – Styrelsens uppgifter  
 **Nivå:** artikel 70.1 led u  
 **Proveniens:** EUT L 119, 4.5.2016, s. 1, originallydelse (▼B). Bärare: konsoliderad text CELEX 02016R0679-20160504 (SV).

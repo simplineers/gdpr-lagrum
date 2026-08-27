@@ -3,6 +3,7 @@
 *artikel 12.5 led b*
 
 **Kapitel:** KAPITEL III – Den registrerades rättigheter  
+**Avsnitt:** Avsnitt 1 – Insyn och villkor  
 **Artikel:** 12 – Klar och tydlig information och kommunikation samt klara och tydliga villkor för utövandet av den registrerades rättigheter  
 **Nivå:** artikel 12.5 led b  
 **Proveniens:** EUT L 119, 4.5.2016, s. 1, originallydelse (▼B). Bärare: konsoliderad text CELEX 02016R0679-20160504 (SV).

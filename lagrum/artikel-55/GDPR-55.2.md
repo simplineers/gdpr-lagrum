@@ -3,6 +3,7 @@
 *artikel 55.2*
 
 **Kapitel:** KAPITEL VI – Oberoende tillsynsmyndigheter  
+**Avsnitt:** Avsnitt 2 – Behörighet, uppgifter och befogenheter  
 **Artikel:** 55 – Behörighet  
 **Nivå:** artikel 55.2  
 **Proveniens:** EUT L 119, 4.5.2016, s. 1, originallydelse (▼B). Bärare: konsoliderad text CELEX 02016R0679-20160504 (SV).

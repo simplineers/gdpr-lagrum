@@ -3,6 +3,7 @@
 *artikel 63*
 
 **Kapitel:** KAPITEL VII – Samarbete och enhetlighet  
+**Avsnitt:** Avsnitt 2 – Enhetlighet  
 **Artikel:** 63 – Mekanism för enhetlighet  
 **Nivå:** artikel 63  
 **Proveniens:** EUT L 119, 4.5.2016, s. 1, originallydelse (▼B). Bärare: konsoliderad text CELEX 02016R0679-20160504 (SV).

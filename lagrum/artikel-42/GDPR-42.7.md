@@ -3,6 +3,7 @@
 *artikel 42.7*
 
 **Kapitel:** KAPITEL IV – Personuppgiftsansvarig och personuppgiftsbiträde  
+**Avsnitt:** Avsnitt 5 – Uppförandekod och certifiering  
 **Artikel:** 42 – Certifiering  
 **Nivå:** artikel 42.7  
 **Proveniens:** EUT L 119, 4.5.2016, s. 1, ändrad lydelse enligt rättelse, EUT L 127, 23.5.2018, s. 2 (▼C1). Bärare: konsoliderad text CELEX 02016R0679-20160504 (SV).

@@ -1,6 +1,7 @@
 # Artikel 23 – Begränsningar
 
 **Kapitel:** KAPITEL III – Den registrerades rättigheter  
+**Avsnitt:** Avsnitt 5 – Begränsningar  
 **Lagrum i artikeln:** 18
 
 | Lagrum | Nivå | Normtext |

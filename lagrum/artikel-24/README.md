@@ -1,6 +1,7 @@
 # Artikel 24 – Den personuppgiftsansvariges ansvar
 
 **Kapitel:** KAPITEL IV – Personuppgiftsansvarig och personuppgiftsbiträde  
+**Avsnitt:** Avsnitt 1 – Allmänna skyldigheter  
 **Lagrum i artikeln:** 3
 
 | Lagrum | Nivå | Normtext |

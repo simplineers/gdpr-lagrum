@@ -1,6 +1,7 @@
 # Artikel 27 – Företrädare för personuppgiftsansvariga eller personuppgiftsbiträden som inte är etablerade i unionen
 
 **Kapitel:** KAPITEL IV – Personuppgiftsansvarig och personuppgiftsbiträde  
+**Avsnitt:** Avsnitt 1 – Allmänna skyldigheter  
 **Lagrum i artikeln:** 6
 
 | Lagrum | Nivå | Normtext |

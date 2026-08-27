@@ -3,6 +3,7 @@
 *artikel 39.1 led d*
 
 **Kapitel:** KAPITEL IV – Personuppgiftsansvarig och personuppgiftsbiträde  
+**Avsnitt:** Avsnitt 4 – Dataskyddsombud  
 **Artikel:** 39 – Dataskyddsombudets uppgifter  
 **Nivå:** artikel 39.1 led d  
 **Proveniens:** EUT L 119, 4.5.2016, s. 1, originallydelse (▼B). Bärare: konsoliderad text CELEX 02016R0679-20160504 (SV).

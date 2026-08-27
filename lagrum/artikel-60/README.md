@@ -1,6 +1,7 @@
 # Artikel 60 – Samarbete mellan den ansvariga tillsynsmyndigheten och de andra berörda tillsynsmyndigheterna
 
 **Kapitel:** KAPITEL VII – Samarbete och enhetlighet  
+**Avsnitt:** Avsnitt 1 – Samarbete  
 **Lagrum i artikeln:** 12
 
 | Lagrum | Nivå | Normtext |

@@ -1,6 +1,7 @@
 # Artikel 43 – Certifieringsorgan
 
 **Kapitel:** KAPITEL IV – Personuppgiftsansvarig och personuppgiftsbiträde  
+**Avsnitt:** Avsnitt 5 – Uppförandekod och certifiering  
 **Lagrum i artikeln:** 14
 
 | Lagrum | Nivå | Normtext |

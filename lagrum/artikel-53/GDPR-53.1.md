@@ -3,6 +3,7 @@
 *artikel 53.1*
 
 **Kapitel:** KAPITEL VI – Oberoende tillsynsmyndigheter  
+**Avsnitt:** Avsnitt 1 – Oberoende ställning  
 **Artikel:** 53 – Allmänna villkor för tillsynsmyndighetens ledamöter  
 **Nivå:** artikel 53.1  
 **Proveniens:** EUT L 119, 4.5.2016, s. 1, ändrad lydelse enligt rättelse, EUT L 74, 4.3.2021, s. 35 (▼C2). Bärare: konsoliderad text CELEX 02016R0679-20160504 (SV).

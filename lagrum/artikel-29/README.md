@@ -1,6 +1,7 @@
 # Artikel 29 – Behandling under den personuppgiftsansvariges eller personuppgiftsbiträdets överinseende
 
 **Kapitel:** KAPITEL IV – Personuppgiftsansvarig och personuppgiftsbiträde  
+**Avsnitt:** Avsnitt 1 – Allmänna skyldigheter  
 **Lagrum i artikeln:** 1
 
 | Lagrum | Nivå | Normtext |

@@ -1,6 +1,7 @@
 # Artikel 14 – Information som ska tillhandahållas om personuppgifterna inte har erhållits från den registrerade
 
 **Kapitel:** KAPITEL III – Den registrerades rättigheter  
+**Avsnitt:** Avsnitt 2 – Information och tillgång till personuppgifter  
 **Lagrum i artikeln:** 21
 
 | Lagrum | Nivå | Normtext |

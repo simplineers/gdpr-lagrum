@@ -3,6 +3,7 @@
 *artikel 34.2*
 
 **Kapitel:** KAPITEL IV – Personuppgiftsansvarig och personuppgiftsbiträde  
+**Avsnitt:** Avsnitt 2 – Säkerhet för personuppgifter  
 **Artikel:** 34 – Information till den registrerade om en personuppgiftsincident  
 **Nivå:** artikel 34.2  
 **Proveniens:** EUT L 119, 4.5.2016, s. 1, originallydelse (▼B). Bärare: konsoliderad text CELEX 02016R0679-20160504 (SV).

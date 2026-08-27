@@ -3,6 +3,7 @@
 *artikel 24.3*
 
 **Kapitel:** KAPITEL IV – Personuppgiftsansvarig och personuppgiftsbiträde  
+**Avsnitt:** Avsnitt 1 – Allmänna skyldigheter  
 **Artikel:** 24 – Den personuppgiftsansvariges ansvar  
 **Nivå:** artikel 24.3  
 **Proveniens:** EUT L 119, 4.5.2016, s. 1, originallydelse (▼B). Bärare: konsoliderad text CELEX 02016R0679-20160504 (SV).

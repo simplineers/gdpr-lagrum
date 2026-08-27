@@ -1,6 +1,7 @@
 # Artikel 68 – Europeiska dataskyddsstyrelsen
 
 **Kapitel:** KAPITEL VII – Samarbete och enhetlighet  
+**Avsnitt:** Avsnitt 3 – Europeiska dataskyddsstyrelsen  
 **Lagrum i artikeln:** 6
 
 | Lagrum | Nivå | Normtext |

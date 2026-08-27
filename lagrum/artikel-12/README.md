@@ -1,6 +1,7 @@
 # Artikel 12 – Klar och tydlig information och kommunikation samt klara och tydliga villkor för utövandet av den registrerades rättigheter
 
 **Kapitel:** KAPITEL III – Den registrerades rättigheter  
+**Avsnitt:** Avsnitt 1 – Insyn och villkor  
 **Lagrum i artikeln:** 9
 
 | Lagrum | Nivå | Normtext |

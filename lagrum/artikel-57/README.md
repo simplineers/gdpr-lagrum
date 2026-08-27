@@ -1,6 +1,7 @@
 # Artikel 57 – Uppgifter
 
 **Kapitel:** KAPITEL VI – Oberoende tillsynsmyndigheter  
+**Avsnitt:** Avsnitt 2 – Behörighet, uppgifter och befogenheter  
 **Lagrum i artikeln:** 25
 
 | Lagrum | Nivå | Normtext |

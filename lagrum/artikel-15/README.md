@@ -1,6 +1,7 @@
 # Artikel 15 – Den registrerades rätt till tillgång
 
 **Kapitel:** KAPITEL III – Den registrerades rättigheter  
+**Avsnitt:** Avsnitt 2 – Information och tillgång till personuppgifter  
 **Lagrum i artikeln:** 11
 
 | Lagrum | Nivå | Normtext |

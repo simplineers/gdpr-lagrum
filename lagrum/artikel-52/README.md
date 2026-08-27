@@ -1,6 +1,7 @@
 # Artikel 52 – Oberoende
 
 **Kapitel:** KAPITEL VI – Oberoende tillsynsmyndigheter  
+**Avsnitt:** Avsnitt 1 – Oberoende ställning  
 **Lagrum i artikeln:** 6
 
 | Lagrum | Nivå | Normtext |

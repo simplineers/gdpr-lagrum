@@ -3,6 +3,7 @@
 *artikel 60.2*
 
 **Kapitel:** KAPITEL VII – Samarbete och enhetlighet  
+**Avsnitt:** Avsnitt 1 – Samarbete  
 **Artikel:** 60 – Samarbete mellan den ansvariga tillsynsmyndigheten och de andra berörda tillsynsmyndigheterna  
 **Nivå:** artikel 60.2  
 **Proveniens:** EUT L 119, 4.5.2016, s. 1, originallydelse (▼B). Bärare: konsoliderad text CELEX 02016R0679-20160504 (SV).

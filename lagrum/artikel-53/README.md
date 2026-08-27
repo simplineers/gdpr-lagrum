@@ -1,6 +1,7 @@
 # Artikel 53 – Allmänna villkor för tillsynsmyndighetens ledamöter
 
 **Kapitel:** KAPITEL VI – Oberoende tillsynsmyndigheter  
+**Avsnitt:** Avsnitt 1 – Oberoende ställning  
 **Lagrum i artikeln:** 4
 
 | Lagrum | Nivå | Normtext |

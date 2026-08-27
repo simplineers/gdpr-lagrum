@@ -1,6 +1,7 @@
 # Artikel 58 – Befogenheter
 
 **Kapitel:** KAPITEL VI – Oberoende tillsynsmyndigheter  
+**Avsnitt:** Avsnitt 2 – Behörighet, uppgifter och befogenheter  
 **Lagrum i artikeln:** 29
 
 | Lagrum | Nivå | Normtext |

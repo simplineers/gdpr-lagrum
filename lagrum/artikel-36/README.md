@@ -1,6 +1,7 @@
 # Artikel 36 – Förhandssamråd
 
 **Kapitel:** KAPITEL IV – Personuppgiftsansvarig och personuppgiftsbiträde  
+**Avsnitt:** Avsnitt 3 – Konsekvensbedömning avseende dataskydd samt föregående samråd  
 **Lagrum i artikeln:** 10
 
 | Lagrum | Nivå | Normtext |

@@ -3,6 +3,7 @@
 *artikel 23.1 led c*
 
 **Kapitel:** KAPITEL III – Den registrerades rättigheter  
+**Avsnitt:** Avsnitt 5 – Begränsningar  
 **Artikel:** 23 – Begränsningar  
 **Nivå:** artikel 23.1 led c  
 **Proveniens:** EUT L 119, 4.5.2016, s. 1, originallydelse (▼B). Bärare: konsoliderad text CELEX 02016R0679-20160504 (SV).

@@ -1,6 +1,7 @@
 # Artikel 74 – Ordförandens uppgifter
 
 **Kapitel:** KAPITEL VII – Samarbete och enhetlighet  
+**Avsnitt:** Avsnitt 3 – Europeiska dataskyddsstyrelsen  
 **Lagrum i artikeln:** 4
 
 | Lagrum | Nivå | Normtext |

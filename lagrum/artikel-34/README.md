@@ -1,6 +1,7 @@
 # Artikel 34 – Information till den registrerade om en personuppgiftsincident
 
 **Kapitel:** KAPITEL IV – Personuppgiftsansvarig och personuppgiftsbiträde  
+**Avsnitt:** Avsnitt 2 – Säkerhet för personuppgifter  
 **Lagrum i artikeln:** 6
 
 | Lagrum | Nivå | Normtext |

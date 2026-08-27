@@ -3,6 +3,7 @@
 *artikel 30.5*
 
 **Kapitel:** KAPITEL IV – Personuppgiftsansvarig och personuppgiftsbiträde  
+**Avsnitt:** Avsnitt 1 – Allmänna skyldigheter  
 **Artikel:** 30 – Register över behandling  
 **Nivå:** artikel 30.5  
 **Proveniens:** EUT L 119, 4.5.2016, s. 1, ändrad lydelse enligt rättelse, EUT L 127, 23.5.2018, s. 2 (▼C1). Bärare: konsoliderad text CELEX 02016R0679-20160504 (SV).

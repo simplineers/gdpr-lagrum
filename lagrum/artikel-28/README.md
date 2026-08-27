@@ -1,6 +1,7 @@
 # Artikel 28 – Personuppgiftsbiträden
 
 **Kapitel:** KAPITEL IV – Personuppgiftsansvarig och personuppgiftsbiträde  
+**Avsnitt:** Avsnitt 1 – Allmänna skyldigheter  
 **Lagrum i artikeln:** 17
 
 | Lagrum | Nivå | Normtext |

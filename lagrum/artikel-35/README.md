@@ -1,6 +1,7 @@
 # Artikel 35 – Konsekvensbedömning avseende dataskydd
 
 **Kapitel:** KAPITEL IV – Personuppgiftsansvarig och personuppgiftsbiträde  
+**Avsnitt:** Avsnitt 3 – Konsekvensbedömning avseende dataskydd samt föregående samråd  
 **Lagrum i artikeln:** 16
 
 | Lagrum | Nivå | Normtext |

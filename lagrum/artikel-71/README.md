@@ -1,6 +1,7 @@
 # Artikel 71 – Rapporter
 
 **Kapitel:** KAPITEL VII – Samarbete och enhetlighet  
+**Avsnitt:** Avsnitt 3 – Europeiska dataskyddsstyrelsen  
 **Lagrum i artikeln:** 2
 
 | Lagrum | Nivå | Normtext |

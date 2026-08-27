@@ -1,6 +1,7 @@
 # Artikel 13 – Information som ska tillhandahållas om personuppgifterna samlas in från den registrerade
 
 **Kapitel:** KAPITEL III – Den registrerades rättigheter  
+**Avsnitt:** Avsnitt 2 – Information och tillgång till personuppgifter  
 **Lagrum i artikeln:** 14
 
 | Lagrum | Nivå | Normtext |

@@ -1,6 +1,7 @@
 # Artikel 62 – Tillsynsmyndigheters gemensamma insatser
 
 **Kapitel:** KAPITEL VII – Samarbete och enhetlighet  
+**Avsnitt:** Avsnitt 1 – Samarbete  
 **Lagrum i artikeln:** 7
 
 | Lagrum | Nivå | Normtext |

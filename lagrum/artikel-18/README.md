@@ -1,6 +1,7 @@
 # Artikel 18 – Rätt till begränsning av behandling
 
 **Kapitel:** KAPITEL III – Den registrerades rättigheter  
+**Avsnitt:** Avsnitt 3 – Rättelse och radering  
 **Lagrum i artikeln:** 6
 
 | Lagrum | Nivå | Normtext |

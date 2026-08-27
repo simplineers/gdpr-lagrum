@@ -1,6 +1,7 @@
 # Artikel 33 – Anmälan av en personuppgiftsincident till tillsynsmyndigheten
 
 **Kapitel:** KAPITEL IV – Personuppgiftsansvarig och personuppgiftsbiträde  
+**Avsnitt:** Avsnitt 2 – Säkerhet för personuppgifter  
 **Lagrum i artikeln:** 8
 
 | Lagrum | Nivå | Normtext |

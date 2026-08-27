@@ -28,22 +28,42 @@ Filnamnet är lagrummets identifierare, så sökvägen är stabil och citerbar: 
 
 ## KAPITEL III – Den registrerades rättigheter
 
+### Avsnitt 1 – Insyn och villkor
+
 | Artikel | Rubrik | Lagrum |
 |---|---|---|
 | [12](artikel-12/README.md) | Klar och tydlig information och kommunikation samt klara och tydliga villkor för utövandet av den registrerades rättigheter | 9 |
+### Avsnitt 2 – Information och tillgång till personuppgifter
+
+| Artikel | Rubrik | Lagrum |
+|---|---|---|
 | [13](artikel-13/README.md) | Information som ska tillhandahållas om personuppgifterna samlas in från den registrerade | 14 |
 | [14](artikel-14/README.md) | Information som ska tillhandahållas om personuppgifterna inte har erhållits från den registrerade | 21 |
 | [15](artikel-15/README.md) | Den registrerades rätt till tillgång | 11 |
+### Avsnitt 3 – Rättelse och radering
+
+| Artikel | Rubrik | Lagrum |
+|---|---|---|
 | [16](artikel-16/README.md) | Rätt till rättelse | 1 |
 | [17](artikel-17/README.md) | Rätt till radering (”rätten att bli bortglömd”) | 12 |
 | [18](artikel-18/README.md) | Rätt till begränsning av behandling | 6 |
 | [19](artikel-19/README.md) | Anmälningsskyldighet avseende rättelse eller radering av personuppgifter och begränsning av behandling | 1 |
 | [20](artikel-20/README.md) | Rätt till dataportabilitet | 5 |
+### Avsnitt 4 – Rätt att göra invändningar och automatiserat individuellt beslutsfattande
+
+| Artikel | Rubrik | Lagrum |
+|---|---|---|
 | [21](artikel-21/README.md) | Rätt att göra invändningar | 6 |
 | [22](artikel-22/README.md) | Automatiserat individuellt beslutsfattande, inbegripet profilering | 6 |
+### Avsnitt 5 – Begränsningar
+
+| Artikel | Rubrik | Lagrum |
+|---|---|---|
 | [23](artikel-23/README.md) | Begränsningar | 18 |
 
 ## KAPITEL IV – Personuppgiftsansvarig och personuppgiftsbiträde
+
+### Avsnitt 1 – Allmänna skyldigheter
 
 | Artikel | Rubrik | Lagrum |
 |---|---|---|
@@ -55,14 +75,30 @@ Filnamnet är lagrummets identifierare, så sökvägen är stabil och citerbar: 
 | [29](artikel-29/README.md) | Behandling under den personuppgiftsansvariges eller personuppgiftsbiträdets överinseende | 1 |
 | [30](artikel-30/README.md) | Register över behandling | 14 |
 | [31](artikel-31/README.md) | Samarbete med tillsynsmyndigheten | 1 |
+### Avsnitt 2 – Säkerhet för personuppgifter
+
+| Artikel | Rubrik | Lagrum |
+|---|---|---|
 | [32](artikel-32/README.md) | Säkerhet i samband med behandlingen | 7 |
 | [33](artikel-33/README.md) | Anmälan av en personuppgiftsincident till tillsynsmyndigheten | 8 |
 | [34](artikel-34/README.md) | Information till den registrerade om en personuppgiftsincident | 6 |
+### Avsnitt 3 – Konsekvensbedömning avseende dataskydd samt föregående samråd
+
+| Artikel | Rubrik | Lagrum |
+|---|---|---|
 | [35](artikel-35/README.md) | Konsekvensbedömning avseende dataskydd | 16 |
 | [36](artikel-36/README.md) | Förhandssamråd | 10 |
+### Avsnitt 4 – Dataskyddsombud
+
+| Artikel | Rubrik | Lagrum |
+|---|---|---|
 | [37](artikel-37/README.md) | Utnämning av dataskyddsombudet | 9 |
 | [38](artikel-38/README.md) | Dataskyddsombudets ställning | 6 |
 | [39](artikel-39/README.md) | Dataskyddsombudets uppgifter | 6 |
+### Avsnitt 5 – Uppförandekod och certifiering
+
+| Artikel | Rubrik | Lagrum |
+|---|---|---|
 | [40](artikel-40/README.md) | Uppförandekoder | 21 |
 | [41](artikel-41/README.md) | Övervakning av godkända uppförandekoder | 9 |
 | [42](artikel-42/README.md) | Certifiering | 8 |
@@ -82,12 +118,18 @@ Filnamnet är lagrummets identifierare, så sökvägen är stabil och citerbar: 
 
 ## KAPITEL VI – Oberoende tillsynsmyndigheter
 
+### Avsnitt 1 – Oberoende ställning
+
 | Artikel | Rubrik | Lagrum |
 |---|---|---|
 | [51](artikel-51/README.md) | Tillsynsmyndighet | 4 |
 | [52](artikel-52/README.md) | Oberoende | 6 |
 | [53](artikel-53/README.md) | Allmänna villkor för tillsynsmyndighetens ledamöter | 4 |
 | [54](artikel-54/README.md) | Regler för inrättandet av en tillsynsmyndighet | 7 |
+### Avsnitt 2 – Behörighet, uppgifter och befogenheter
+
+| Artikel | Rubrik | Lagrum |
+|---|---|---|
 | [55](artikel-55/README.md) | Behörighet | 3 |
 | [56](artikel-56/README.md) | Den ansvariga tillsynsmyndighetens behörighet | 6 |
 | [57](artikel-57/README.md) | Uppgifter | 25 |
@@ -96,16 +138,26 @@ Filnamnet är lagrummets identifierare, så sökvägen är stabil och citerbar: 
 
 ## KAPITEL VII – Samarbete och enhetlighet
 
+### Avsnitt 1 – Samarbete
+
 | Artikel | Rubrik | Lagrum |
 |---|---|---|
 | [60](artikel-60/README.md) | Samarbete mellan den ansvariga tillsynsmyndigheten och de andra berörda tillsynsmyndigheterna | 12 |
 | [61](artikel-61/README.md) | Ömsesidigt bistånd | 10 |
 | [62](artikel-62/README.md) | Tillsynsmyndigheters gemensamma insatser | 7 |
+### Avsnitt 2 – Enhetlighet
+
+| Artikel | Rubrik | Lagrum |
+|---|---|---|
 | [63](artikel-63/README.md) | Mekanism för enhetlighet | 1 |
 | [64](artikel-64/README.md) | Yttrande från Styrelsen | 14 |
 | [65](artikel-65/README.md) | Tvistlösning genom styrelsen | 8 |
 | [66](artikel-66/README.md) | Skyndsamt förfarande | 4 |
 | [67](artikel-67/README.md) | Utbyte av information | 1 |
+### Avsnitt 3 – Europeiska dataskyddsstyrelsen
+
+| Artikel | Rubrik | Lagrum |
+|---|---|---|
 | [68](artikel-68/README.md) | Europeiska dataskyddsstyrelsen | 6 |
 | [69](artikel-69/README.md) | Oberoende | 2 |
 | [70](artikel-70/README.md) | Styrelsens uppgifter | 28 |

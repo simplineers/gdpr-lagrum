@@ -1,6 +1,7 @@
 # Artikel 16 – Rätt till rättelse
 
 **Kapitel:** KAPITEL III – Den registrerades rättigheter  
+**Avsnitt:** Avsnitt 3 – Rättelse och radering  
 **Lagrum i artikeln:** 1
 
 | Lagrum | Nivå | Normtext |

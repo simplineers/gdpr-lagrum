@@ -1,6 +1,7 @@
 # Artikel 59 – Verksamhetsrapporter
 
 **Kapitel:** KAPITEL VI – Oberoende tillsynsmyndigheter  
+**Avsnitt:** Avsnitt 2 – Behörighet, uppgifter och befogenheter  
 **Lagrum i artikeln:** 1
 
 | Lagrum | Nivå | Normtext |

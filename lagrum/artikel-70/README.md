@@ -1,6 +1,7 @@
 # Artikel 70 – Styrelsens uppgifter
 
 **Kapitel:** KAPITEL VII – Samarbete och enhetlighet  
+**Avsnitt:** Avsnitt 3 – Europeiska dataskyddsstyrelsen  
 **Lagrum i artikeln:** 28
 
 | Lagrum | Nivå | Normtext |

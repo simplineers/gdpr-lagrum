@@ -3,6 +3,7 @@
 *artikel 15.1 led e*
 
 **Kapitel:** KAPITEL III – Den registrerades rättigheter  
+**Avsnitt:** Avsnitt 2 – Information och tillgång till personuppgifter  
 **Artikel:** 15 – Den registrerades rätt till tillgång  
 **Nivå:** artikel 15.1 led e  
 **Proveniens:** EUT L 119, 4.5.2016, s. 1, originallydelse (▼B). Bärare: konsoliderad text CELEX 02016R0679-20160504 (SV).

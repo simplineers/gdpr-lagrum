@@ -1,6 +1,7 @@
 # Artikel 37 – Utnämning av dataskyddsombudet
 
 **Kapitel:** KAPITEL IV – Personuppgiftsansvarig och personuppgiftsbiträde  
+**Avsnitt:** Avsnitt 4 – Dataskyddsombud  
 **Lagrum i artikeln:** 9
 
 | Lagrum | Nivå | Normtext |

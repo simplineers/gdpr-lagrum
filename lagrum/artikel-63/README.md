@@ -1,6 +1,7 @@
 # Artikel 63 – Mekanism för enhetlighet
 
 **Kapitel:** KAPITEL VII – Samarbete och enhetlighet  
+**Avsnitt:** Avsnitt 2 – Enhetlighet  
 **Lagrum i artikeln:** 1
 
 | Lagrum | Nivå | Normtext |

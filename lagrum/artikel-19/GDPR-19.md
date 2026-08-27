@@ -3,6 +3,7 @@
 *artikel 19*
 
 **Kapitel:** KAPITEL III – Den registrerades rättigheter  
+**Avsnitt:** Avsnitt 3 – Rättelse och radering  
 **Artikel:** 19 – Anmälningsskyldighet avseende rättelse eller radering av personuppgifter och begränsning av behandling  
 **Nivå:** artikel 19  
 **Proveniens:** EUT L 119, 4.5.2016, s. 1, originallydelse (▼B). Bärare: konsoliderad text CELEX 02016R0679-20160504 (SV).
