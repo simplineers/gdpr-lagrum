@@ -1,16 +1,17 @@
 .RECIPEPREFIX := >
 .PHONY: all check build verify sync clean
 
-GDPR_SRC ?= source/celex-02016R0679-20160504-sv.html
+# GDPR_SRC lamnas avsiktligt osatt. parse.py loser upp kallan i source/
+# genom att matcha SHA-256 mot pinnen, sa filnamnet spelar ingen roll.
+# Satt GDPR_SRC bara for att bygga mot en fil utanfor source/.
 GDPR_OUT ?= dist
 GDPR_LAGRUM ?= lagrum
-export GDPR_SRC
 export GDPR_OUT
 export GDPR_LAGRUM
 
 all: check build verify
 
-## check: kontrollera att kallfilen finns och har ratt checksumma
+## check: kontrollera att kallan i source/ matchar pinnen
 check:
 > python3 -c "import parse; print('kalla ok, sha256', parse.check_source())"
 
