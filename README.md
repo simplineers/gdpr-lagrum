@@ -1,46 +1,62 @@
 # gdpr-lagrum
 
-GDPR:s artiklar 1–99 uppdelade i självständigt läsbara lagrum, med ordagrann
-normtext, infogade hänvisningar och de definitioner ur artikel 4 som faktiskt
-behövs. Varje lagrum går att läsa och citera utan att ha resten av
-förordningen framför sig.
+GDPR:s artiklar 1–99 uppdelade i 705 självständigt läsbara lagrum, med
+ordagrann normtext, infogade hänvisningar och de definitioner ur artikel 4 som
+faktiskt behövs. **Ett lagrum per fil** — varje bestämmelse går att läsa, länka
+till och citera utan att ha resten av förordningen framför sig.
 
-*English: the 99 articles of the GDPR (Swedish language version) split into
-self-contained, citable provisions. Verbatim normative text, referenced
-provisions quoted in full, and the Article 4 definitions actually used. Every
-quoted string is machine-verified character-for-character against the source.
-See `METOD.md` for method, `NOTICE` for sources and terms.*
+*English: the 99 articles of the GDPR (Swedish language version) split into 705
+self-contained, citable provisions, one per file. Verbatim normative text,
+referenced provisions quoted in full, and the Article 4 definitions actually
+used. Every quoted string is machine-verified character-for-character against
+the source. See `METOD.md` for method, `NOTICE` for sources and terms.*
 
-## Vad ett lagrum ser ut som
+## Börja här
 
-`GDPR-5.1.b` innehåller punktens inledning och ledet ordagrant, därefter
-artikel 89.1 i sin helhet i ett eget block, därefter definitionerna av
-*personuppgifter*, *behandling* och *pseudonymisering*. Ingenting splitsas in
-i normtexten — den ska kunna läsas som den är antagen.
+[**lagrum/**](lagrum/README.md) — index per kapitel och artikel.
+
+Filnamnet är lagrummets identifierare, så sökvägen är stabil och citerbar:
 
 ```
-NORMTEXT (ordagrant)
-[artikel 5.1 inledning]
-Vid behandling av personuppgifter ska följande gälla:
+lagrum/artikel-05/GDPR-5.1.b.md
+lagrum/artikel-04/GDPR-4.11.md
+lagrum/artikel-06/GDPR-6.1.f.md
+```
 
-[artikel 5.1 led b]
-De ska samlas in för särskilda, uttryckligt angivna och berättigade ändamål
-och inte senare behandlas på ett sätt som är oförenligt med dessa ändamål.
-Ytterligare behandling för arkivändamål av allmänt intresse, vetenskapliga
-eller historiska forskningsändamål eller statistiska ändamål i enlighet med
-artikel 89.1 ska inte anses vara oförenlig med de ursprungliga ändamålen
-(ändamålsbegränsning).
+## Vad en fil innehåller
 
-INFOGAD REFERENS [1/1] — artikel 89.1 (hänvisning: ”artikel 89.1”)
-[artikel 89.1]
-Behandling för arkivändamål av allmänt intresse, vetenskapliga eller
-historiska forskningsändamål eller statistiska ändamål ska omfattas av
-lämpliga skyddsåtgärder i enlighet med denna förordning för den
-registrerades rättigheter och friheter. …
+`GDPR-5.1.b.md` börjar med punktens inledning och ledet ordagrant, därefter
+artikel 89.1 i sin helhet i ett eget block, därefter definitionerna av
+*personuppgifter*, *behandling* och *pseudonymisering*. Ingenting splitsas in i
+normtexten — den ska kunna läsas som den är antagen.
 
-TERMER — ARTIKEL 4 (ordagrant)
+```
+## Normtext (ordagrant)
+
+*artikel 5.1 inledning*
+> Vid behandling av personuppgifter ska följande gälla:
+
+*artikel 5.1 led b*
+> De ska samlas in för särskilda, uttryckligt angivna och berättigade ändamål
+> och inte senare behandlas på ett sätt som är oförenligt med dessa ändamål.
+> Ytterligare behandling … i enlighet med artikel 89.1 ska inte anses vara
+> oförenlig med de ursprungliga ändamålen (ändamålsbegränsning).
+
+## Infogad referens [1/1] — artikel 89.1
+Hänvisning i normtexten: ”artikel 89.1”.
+
+*artikel 89.1*
+> Behandling för arkivändamål av allmänt intresse … ska omfattas av lämpliga
+> skyddsåtgärder i enlighet med denna förordning för den registrerades
+> rättigheter och friheter. …
+
+## Termer — artikel 4 (ordagrant)
 …
 ```
+
+Utöver detta: pekare till hänvisningar som inte återges i sin helhet, externa
+instrument, vaga hänvisningar, referenskedja på djup 2, proveniens och
+förbehåll.
 
 ## Omfattning
 
@@ -72,7 +88,7 @@ ordalydelsen är originalets (`▼B`) eller rättelsens (`▼C1`).
 
 Indata pinnas med SHA-256. Bygget vägrar starta mot en okänd källfil, så
 artefakterna kan inte härledas ur en annan version än den avsedda. Se
-`source/SOURCE.md`.
+[`source/SOURCE.md`](source/SOURCE.md).
 
 ## Bygga
 
@@ -81,19 +97,27 @@ pip install -r requirements.txt
 make all
 ```
 
-`make all` kontrollerar källans checksumma, bygger artefakterna till `dist/`
-och kör båda verifieringarna. Artefakterna versionshanteras inte — de byggs i
-CI och läggs som release-assets.
+Bygget är deterministiskt: `lagrum/`, `METOD.md` och JSON blir bitidentiska
+mellan körningar. Inga datumstämplar förekommer, just för att en omgenerering
+ska ge en tom diff när ingenting ändrats.
+
+`lagrum/` och `METOD.md` är genererade men versionshanterade. Det är avsiktligt:
+när generatorn eller källan ändras ger omgenereringen en granskningsbar diff
+per enskilt lagrum, vilket är en revisionskontroll i sig. `make sync` failar om
+de inte är aktuella, och CI kör den. Samlingsutgåvorna i `dist/` är däremot
+inte versionshanterade utan byggs i CI.
 
 ## Verifiering
 
-Två grindar, båda obligatoriska i CI. Bygget failar om en enda ordalydelse
+Tre grindar, samtliga obligatoriska i CI. Bygget failar om en enda ordalydelse
 avviker.
 
 | Kontroll | Skript | Utfall |
 |---|---|---|
 | Det parsade trädet återsammanfogas och jämförs tecken för tecken mot källans artikeltext, alla 99 artiklar | `verify.py` | 0 avvikelser |
-| Samtliga 5 305 blockcitat i det levererade dokumentet återfinns ordagrant i källan | `final_check.py` | 0 avvikelser |
+| Samtliga blockcitat i samlingsdokumentet och i varje enskild lagrumsfil återfinns ordagrant i källan | `final_check.py` | 10 610 citat, 0 avvikelser |
+| Filnamn matchar identifierare, unika id, artikeltäckning, interna länkar | `final_check.py` | 705/705, 99/99, 0 brutna |
+| `lagrum/` och `METOD.md` är aktuella | `make sync` | tom diff krävs |
 
 Enda tillämpade normalisering är att hårt blanksteg (U+00A0) ersatts med
 vanligt blanksteg och att HTML-radbrytningar kollapsats till enkelt blanksteg.
@@ -102,23 +126,29 @@ Ingen omskrivning, sammanfattning eller förkortning förekommer.
 ## Struktur
 
 ```
-parse.py           EUR-Lex-HTML -> nodträd, med checksumpinne
-statements.py      lagrum, referensupplösning, termupplösning, proveniens
-render.py          Markdown, JSON och CSV
-verify.py          återsammanfogning mot källan
-final_check.py     kontroll av den levererade filen
-METOD.md           metod, designval, kända begränsningar
-NOTICE             källor, licensvillkor, redovisade ändringar
-source/SOURCE.md   pinnad indata
+lagrum/artikel-NN/GDPR-*.md   ett lagrum per fil, versionshanterade
+lagrum/artikel-NN/README.md   artikelindex
+lagrum/README.md              rotindex per kapitel
+
+parse.py                      EUR-Lex-HTML -> nodträd, med checksumpinne
+statements.py                 lagrum, referens- och termupplösning, proveniens
+render.py                     lagrum/ samt samlingsutgåvorna i dist/
+metod.py                      METOD.md ur den faktiska körningen
+verify.py                     återsammanfogning mot källan
+final_check.py                kontroll av samtliga levererade filer
+
+METOD.md                      metod, designval, kända begränsningar
+NOTICE                        källor, licensvillkor, redovisade ändringar
+source/SOURCE.md              pinnad indata
 ```
 
-## Artefakter
+## Samlingsutgåvor
 
 | Fil | Innehåll |
 |---|---|
-| `GDPR-uttalanden-v1.0.md` | läsdokument, alla 705 lagrum, innehållsförteckning per kapitel |
-| `gdpr-uttalanden-v1.0.json` | strukturerad utgåva för systeminläsning |
-| `gdpr-uttalanden-v1.0.csv` | en rad per lagrum, med kolumnen `lastext` färdig för GRC-fält |
+| `dist/gdpr-lagrum-v1.0.md` | samlingsdokument, alla lagrum, innehållsförteckning per kapitel |
+| `dist/gdpr-lagrum-v1.0.json` | strukturerad utgåva; `kalla`, `omfattning`, `antal_lagrum`, `lagrum[]` |
+| `dist/gdpr-lagrum-v1.0.csv` | en rad per lagrum, med kolumnen `lastext` färdig för GRC-fält och `fil` som pekar på lagrumsfilen |
 
 ## Begränsningar
 
@@ -126,12 +156,14 @@ Termmatchningen är heuristisk och kan i enstaka fall missa en oregelbunden
 böjningsform eller träffa en term i allmänspråklig mening. Träffarna redovisas
 alltid med artikelnummer så att en granskare kan avvisa dem. Hela artiklar och
 kapitel återges inte vid hänvisning, bara pekare med rubrik. Vaga uttryck som
-”unionsrätten” löses inte upp. Samtliga val är dokumenterade i `METOD.md`
-avsnitt 6 och 7.
+”unionsrätten” löses inte upp. Strecksatser är inte självständigt adresserbara
+i förordningen och ingår därför i punktens lagrum. Samtliga val är dokumenterade
+i [`METOD.md`](METOD.md) avsnitt 6 och 7.
 
 Materialet ersätter inte en rättslig bedömning.
 
 ## Licens
 
-Kod och `METOD.md`: se `LICENSE`. Normtexten är EU-material — se `NOTICE` för
-källangivelse, licensvillkor och redovisning av gjorda ändringar.
+Kod, `metod.py`-genererad `METOD.md` och övrig egen text: se `LICENSE`.
+Normtexten är EU-material — se [`NOTICE`](NOTICE) för källangivelse,
+licensvillkor och redovisning av gjorda ändringar.
