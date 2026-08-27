@@ -231,6 +231,31 @@ def expand(kw, expr, ctx_art, ctx_punkt):
 
 SUF = (r"(?:ernas|arnas|ornas|erna|arna|orna|ens|ets|nas|ans|as|es|ns|ts|"
        r"en|et|ar|er|or|na|s|n|t|e|a)?")
+# I flerordiga termer böjs inte bara huvudordet. Attributet kongruensböjs:
+# "huvudsakligt verksamhetsställe" uppträder som "huvudsakliga
+# verksamhetsstället", och "berörd tillsynsmyndighet" som "berörda
+# tillsynsmyndigheterna". Endast huvudordet får full nominalböjning; övriga ord
+# får den snävare kongruensändelsen.
+# Huvudordet är inte alltid det sista: i "begränsning av behandling" böjs
+# första ledet ("begränsningar av behandling"). Varje betydelsebärande ord får
+# därför full böjning, medan funktionsord hålls oböjda.
+FUNKTIONSORD = {"av", "om", "i", "och", "eller", "för", "med", "till"}
+
+
+def _ordmonster(w, sista=False):
+    """Mönster för ett ord i en term.
+
+    Huvudordet får ren nominalböjning: ändelsen läggs till. Ett attribut kan
+    dessutom kongruensböjas genom att slutvokalen byts ut — huvudsakligt blir
+    huvudsakliga — vilket kräver att stammen kapas. Kapning på huvudordet
+    skulle däremot förstöra dess egen böjning: tillsynsmyndighet får inte bli
+    tillsynsmyndighe."""
+    if w.lower() in FUNKTIONSORD or len(w) <= 3:
+        return re.escape(w)
+    lagg_till = re.escape(w) + SUF
+    if sista or len(w) <= 5 or w[-1] not in "tae":
+        return lagg_till
+    return f"(?:{lagg_till}|{re.escape(w[:-1])}(?:a|e|t))"
 ALIAS = {
     "11": ["samtycke av den registrerade", "samtycke"],
     "6": ["register", "registret", "registren", "registrets"],
@@ -248,8 +273,9 @@ def build_terms(reg):
         forms = ALIAS.get(key, [t])
         pats = []
         for f in forms:
-            words = [re.escape(w) for w in f.split()]
-            words[-1] = words[-1] + SUF
+            delar = f.split()
+            words = [_ordmonster(w, sista=(i == len(delar) - 1))
+                     for i, w in enumerate(delar)]
             pats.append(r"\s+".join(words))
         rx = re.compile(r"(?<![\wåäöÅÄÖ-])(?:" + "|".join(pats) + r")(?![a-zåäöA-ZÅÄÖ-])",
                         re.IGNORECASE)
@@ -446,8 +472,12 @@ def resolve(reg, st, terms, chapters):
     return st
 
 
+FOTNOT = re.compile(r"\(\s*(\d+)\s*\)")
+
+
 def generate():
     arts = P.parse()
+    fotnoter = P.footnotes()
     reg = Reg(arts)
     terms = build_terms(reg)
     chapters = {}
@@ -547,6 +577,16 @@ def generate():
 
     for st in sts:
         resolve(reg, st, terms, chapters)
+        # Artikeltexten bär fotnotsmarkörer vars innehåll ligger utanför
+        # artikeldelen. Utan dem är hänvisningen till det externa instrumentet
+        # ofullständig, så markörerna löses upp mot källans fotnoter.
+        hay = " ".join(
+            [b["text"] for b in st["normtext"]]
+            + [b["text"] for r in st["referenser"] if r["typ"] == "infogad"
+               for b in r["block"]])
+        st["fotnoter"] = [
+            {"markor": f"({n})", "text": fotnoter[n]}
+            for n in dict.fromkeys(FOTNOT.findall(hay)) if n in fotnoter]
         st["proveniens"] = {
             "autentisk_kalla": OJ,
             "lydelse": lydelse_for(st["prov"]),

@@ -200,6 +200,21 @@ def prov_for(idx, marks):
 ROMAN = r"[IVX]+"
 
 
+def footnotes():
+    """Fotnoterna ligger utanför artikeldivarna och bär de fullständiga
+    EUT-hänvisningarna till de externa instrument artikeltexten pekar på."""
+    check_source()
+    soup = BeautifulSoup(open(SRC, encoding="utf-8", errors="replace").read(),
+                         "lxml")
+    out = {}
+    for el in soup.select("p.footnote"):
+        t = text_of(el)
+        m = re.match(r"^\(\s*(\d+)\s*\)\s*(.*)$", t)
+        if m:
+            out[m.group(1)] = t
+    return out
+
+
 def parse():
     check_source()
     html = open(SRC, encoding="utf-8", errors="replace").read()

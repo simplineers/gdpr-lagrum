@@ -86,8 +86,11 @@ Varje lagrum består av avgränsade block i fast ordning:
 4. **Pekare** — hänvisningar som inte återges i sin helhet, med artikelrubrik.
 5. **Externa instrument** — hänvisningar utanför förordningen, aldrig återgivna.
 6. **Vaga hänvisningar** — uttryck utan angivet instrument, annoterade.
-7. **Referenskedja** — hänvisningar på djup 2, redovisade men inte infogade.
-8. **Proveniens** och **förbehåll**.
+7. **Fotnoter** — artikeltextens fotnotsmarkörer upplösta mot källans
+   fotnoter, ordagrant. Fotnoterna bär de fullständiga EUT-hänvisningarna till
+   externa instrument och ligger utanför artikeldelen i källan.
+8. **Referenskedja** — hänvisningar på djup 2, redovisade men inte infogade.
+9. **Proveniens** och **förbehåll**.
 
 Infogad text placeras alltid **efter** normtexten, aldrig inne i den. Skälet är
 att normtexten måste kunna läsas som den är antagen; text som splitsas in mitt i
@@ -169,6 +172,11 @@ felträffar: ”behandlingen” och ”behandlingar” matchar termen *behandlin
 teckenpositioner maskeras, så att *bindande företagsbestämmelser* inte också
 utlöser *företag*.
 
+Matchningen hanterar att attribut kongruensböjs. Huvudordet får ren
+nominalböjning, medan ett attribut dessutom kan byta slutvokal: *huvudsakligt
+verksamhetsställe* uppträder i texten som ”huvudsakliga verksamhetsstället”.
+Utan den regeln missades tre termer helt eller delvis.
+
 Två redaktionella alias har införts där lagtextens termform inte förekommer i
 brukstexten:
 
@@ -224,6 +232,12 @@ ordalydelse avviker.
 | Unika identifierare | `final_check.py` | {len(sts)} av {len(sts)} |
 | Artikeltäckning | `final_check.py` | 99 av 99 |
 | Källfilens checksumma | `parse.py` | pinnad, se `source/SOURCE.md` |
+| Varje textnod i källträdet hamnar i minst ett lagrum | `audit.py` | 786 av 786 |
+| Varje hänvisning i normtexten upplöses till infogad text eller pekare | `audit.py` | 0 oupplösta |
+| Varje led ärver punktens inledning | `audit.py` | 0 utan |
+| Varje fotnotsmarkör i texten har upplöst fotnotstext | `audit.py` | 0 oupplösta |
+| Flerordiga termer träffas i sina böjda former | `audit.py` | 0 missade |
+| Inga extraktionsartefakter i texten | `audit.py` | 0 |
 
 ## 9. Filer
 

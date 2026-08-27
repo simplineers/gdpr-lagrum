@@ -83,6 +83,11 @@ def body_md(s, md=True, heading=2):
                 L.append(f"- {m['mal']}{rub}  ·  hänvisning: ”{r['referens']}”")
         L.append("")
 
+    if s.get("fotnoter"):
+        L += [f"{h} Fotnoter i normtexten (ordagrant)", ""]
+        for fn in s["fotnoter"]:
+            L += [q(fn["text"]), ""]
+
     ext = [r for r in s["referenser"] if r["typ"] == "externt"]
     if ext:
         L += [f"{h} Externa instrument (återges inte)", ""]
@@ -211,6 +216,9 @@ def render_plain(s):
                 L.append(f"- {m['mal']}"
                          + (f" – {m['rubrik']}" if m["rubrik"] else ""))
         L.append("")
+    if s.get("fotnoter"):
+        L += ["FOTNOTER I NORMTEXTEN (ordagrant)"]
+        L += [fn["text"] for fn in s["fotnoter"]] + [""]
     ext = [r for r in s["referenser"] if r["typ"] == "externt"]
     if ext:
         L += ["EXTERNA INSTRUMENT (återges inte)"]
@@ -293,6 +301,7 @@ def write_csv(sts):
             "normtext", "normtext_tecken", "antal_normtextblock",
             "antal_infogade_referenser", "antal_pekare",
             "antal_externa_instrument", "antal_termer", "antal_kedjeposter",
+            "fotnoter",
             "infogade_referenser", "pekare", "externa_instrument", "termer",
             "vaga_hanvisningar", "markor", "lydelse", "fil", "url"]
     fh, w = _writer(f"{OUT}/{BASENAME}.csv", cols)
@@ -318,6 +327,7 @@ def write_csv(sts):
             "antal_externa_instrument": len(ext),
             "antal_termer": len(s["termer"]),
             "antal_kedjeposter": len(s["referenskedja"]),
+            "fotnoter": CSV_JOIN.join(fn["markor"] for fn in s.get("fotnoter", [])),
             "infogade_referenser": CSV_JOIN.join(r["mal"] for r in inf),
             "pekare": CSV_JOIN.join(pek),
             "externa_instrument": CSV_JOIN.join(ext),

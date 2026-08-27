@@ -20,10 +20,11 @@ build:
 > python3 render.py
 > python3 metod.py
 
-## verify: bada grindarna, failar vid minsta avvikelse i ordalydelsen
+## verify: alla grindar, failar vid minsta avvikelse
 verify:
 > python3 verify.py
 > python3 final_check.py
+> python3 audit.py
 
 ## sync: kontrollera att versionshanterade genererade filer ar aktuella
 sync:
