@@ -5,7 +5,7 @@
 **Kapitel:** KAPITEL VI – Oberoende tillsynsmyndigheter  
 **Artikel:** 53 – Allmänna villkor för tillsynsmyndighetens ledamöter  
 **Nivå:** artikel 53.1  
-**Proveniens:** EUT L 119, 4.5.2016, s. 1, ändrad lydelse enligt rättelse EUT L 127, 23.5.2018, s. 16 (▼C2). Bärare: konsoliderad text CELEX 02016R0679-20160504 (SV).
+**Proveniens:** EUT L 119, 4.5.2016, s. 1, ändrad lydelse enligt rättelse, EUT L 74, 4.3.2021, s. 35 (▼C2). Bärare: konsoliderad text CELEX 02016R0679-20160504 (SV).
 
 ## Normtext (ordagrant)
 
@@ -47,7 +47,7 @@ Utdraget avser ett enskilt lagrum i förordning (EU) 2016/679. Normtexten återg
 
 ---
 
-Källa: förordning (EU) 2016/679, EUT L 119, 4.5.2016, s. 1, i lydelse enligt rättelse EUT L 127, 23.5.2018, s. 16. Bärare av
+Källa: förordning (EU) 2016/679, EUT L 119, 4.5.2016, s. 1, i lydelse enligt rättelse, EUT L 127, 23.5.2018, s. 2 och rättelse, EUT L 74, 4.3.2021, s. 35. Bärare av
 ordalydelsen: konsoliderad text CELEX 02016R0679-20160504 (SV), © Europeiska unionen, CC BY 4.0. Konsoliderade texter är
 dokumentationshjälpmedel utan rättslig verkan; endast EUT:s elektroniska
 utgåva är giltig och har rättslig verkan (rådets förordning (EU) nr 216/2013).
