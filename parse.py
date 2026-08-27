@@ -218,12 +218,19 @@ def parse():
         cls = set(el.get("class") or [])
         if "title-division-1" in cls:
             lab = text_of(el)
-            if re.match(r"^KAPITEL\s", lab):
+            # Källan skriver "KAPITEL I" med versaler men "Avsnitt 1" med
+            # gemener. Matchningen är därför skiftlägesokänslig. En okänd
+            # indelningsrubrik är ett hårt fel: en tyst reservgren skulle
+            # kasta strukturinformation utan att någon märker det.
+            if re.match(r"^kapitel\s", lab, re.I):
                 pending = ("KAPITEL", lab)
-            elif re.match(r"^AVSNITT\s", lab):
+            elif re.match(r"^avsnitt\s", lab, re.I):
                 pending = ("AVSNITT", lab)
             else:
-                pending = ("ANNAT", lab)
+                sys.exit(f"Okänd indelningsrubrik i källan: {lab!r}. "
+                         f"Förväntade KAPITEL eller Avsnitt. Läs källans "
+                         f"struktur och komplettera parse_article innan "
+                         f"bygget körs vidare.")
             continue
         if "title-division-2" in cls:
             name = text_of(el)

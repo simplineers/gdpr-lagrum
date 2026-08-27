@@ -11,12 +11,13 @@ ordalydelsen kan extraheras och verifieras maskinellt i samtliga utgåvor.
 
 lagrum/ töms och byggs om vid varje körning. Lägg inga handskrivna filer där.
 """
-import json, csv, os, shutil
+import json, csv, os, re, shutil
 from statements import generate, OJ, RATT, RATTELSER, KONS, FORBEHALL
 
 OUT = os.environ.get("GDPR_OUT", "dist")
 LAGRUM = os.environ.get("GDPR_LAGRUM", "lagrum")
 BASENAME = "gdpr-lagrum-v1.0"
+REPO_URL = "https://github.com/simplineers/gdpr-lagrum"
 
 
 # ----------------------------------------------------------------- hjälpare
@@ -240,6 +241,150 @@ uppdelad i självständigt läsbara lagrum på lägsta adresserbara normnivå.
 """
 
 
+
+# ----------------------------------------------------------------- csv
+
+CSV_SEP = ";"
+CSV_JOIN = " | "          # skiljetecken inuti celler, aldrig semikolon
+CSV_ENC = "utf-8-sig"     # BOM så att Excel läser åäö rätt
+CSV_EOL = "\r\n"
+
+
+def flat(text):
+    """En cell får aldrig innehålla radbrytning. Då är det ingen tabell."""
+    return re.sub(r"\s+", " ", (text or "").replace("\r", " ")
+                  .replace("\n", " ")).strip()
+
+
+def kap_nr(kapitel):
+    m = re.match(r"KAPITEL\s+([IVX]+)", kapitel or "")
+    if not m:
+        return ""
+    rom = {"I": 1, "V": 5, "X": 10}
+    s, prev, tot = m.group(1), 0, 0
+    for ch in reversed(s):
+        v = rom[ch]
+        tot += -v if v < prev else v
+        prev = max(prev, v)
+    return tot
+
+
+def avs_nr(avsnitt):
+    m = re.match(r"Avsnitt\s+(\d+)", avsnitt or "", re.I)
+    return int(m.group(1)) if m else ""
+
+
+def _writer(path, cols):
+    fh = open(path, "w", newline="", encoding=CSV_ENC)
+    w = csv.DictWriter(fh, fieldnames=cols, delimiter=CSV_SEP,
+                       quoting=csv.QUOTE_MINIMAL, lineterminator=CSV_EOL)
+    w.writeheader()
+    return fh, w
+
+
+def write_csv(sts):
+    """Tre tabeller: ett lagrum per rad, plus normaliserade barntabeller för
+    de flervärda fälten. Flervärda värden i en cell blockerar vidare arbete,
+    så referenser och termer får egna rader med lagrum_id som nyckel."""
+
+    # --- lagrum: en rad per lagrum
+    cols = ["nr", "id", "kapitel_nr", "kapitel", "avsnitt_nr", "avsnitt",
+            "artikel", "artikelrubrik", "punkt", "led", "nivatyp", "niva",
+            "normtext", "normtext_tecken", "antal_normtextblock",
+            "antal_infogade_referenser", "antal_pekare",
+            "antal_externa_instrument", "antal_termer", "antal_kedjeposter",
+            "infogade_referenser", "pekare", "externa_instrument", "termer",
+            "vaga_hanvisningar", "markor", "lydelse", "fil", "url"]
+    fh, w = _writer(f"{OUT}/{BASENAME}.csv", cols)
+    for i, s in enumerate(sts, 1):
+        inf = [r for r in s["referenser"] if r["typ"] == "infogad"]
+        pek = [m["mal"] for r in s["referenser"] if r["typ"] == "pekare"
+               for m in r["mal_lista"]]
+        ext = [f"{r['referens']} i {r['instrument']}"
+               for r in s["referenser"] if r["typ"] == "externt"]
+        nt = " ".join(f"[{b['label']}] {flat(b['text'])}"
+                      for b in s["normtext"])
+        w.writerow({
+            "nr": i, "id": s["id"],
+            "kapitel_nr": kap_nr(s["kapitel"]), "kapitel": flat(s["kapitel"]),
+            "avsnitt_nr": avs_nr(s["avsnitt"]), "avsnitt": flat(s["avsnitt"]),
+            "artikel": s["artikel"], "artikelrubrik": flat(s["artikelrubrik"]),
+            "punkt": s["punkt"] or "", "led": s["led"] or "",
+            "nivatyp": s["nivatyp"], "niva": s["niva"],
+            "normtext": nt, "normtext_tecken": len(nt),
+            "antal_normtextblock": len(s["normtext"]),
+            "antal_infogade_referenser": len(inf),
+            "antal_pekare": len(pek),
+            "antal_externa_instrument": len(ext),
+            "antal_termer": len(s["termer"]),
+            "antal_kedjeposter": len(s["referenskedja"]),
+            "infogade_referenser": CSV_JOIN.join(r["mal"] for r in inf),
+            "pekare": CSV_JOIN.join(pek),
+            "externa_instrument": CSV_JOIN.join(ext),
+            "termer": CSV_JOIN.join(f"{t['ref']} {t['term']}"
+                                    for t in s["termer"]),
+            "vaga_hanvisningar": CSV_JOIN.join(
+                v["uttryck"] for v in s["vaga_hanvisningar"]),
+            "markor": s["proveniens"]["markor"],
+            "lydelse": flat(s["proveniens"]["lydelse"]),
+            "fil": f"{LAGRUM}/{relpath(s)}",
+            "url": f"{REPO_URL}/blob/main/{LAGRUM}/{relpath(s)}",
+        })
+    fh.close()
+
+    # --- referenser: en rad per hänvisning
+    rcols = ["nr", "lagrum_id", "typ", "referens", "mal", "mal_rubrik",
+             "instrument", "mal_text", "not"]
+    fh, w = _writer(f"{OUT}/gdpr-referenser-v1.0.csv", rcols)
+    n = 0
+    for s in sts:
+        for r in s["referenser"]:
+            if r["typ"] == "infogad":
+                n += 1
+                w.writerow({"nr": n, "lagrum_id": s["id"], "typ": "infogad",
+                            "referens": flat(r["referens"]), "mal": r["mal"],
+                            "mal_rubrik": flat(r["artikelrubrik"]),
+                            "instrument": "",
+                            "mal_text": " ".join(
+                                f"[{b['label']}] {flat(b['text'])}"
+                                for b in r["block"]),
+                            "not": ""})
+            elif r["typ"] == "pekare":
+                for m in r["mal_lista"]:
+                    n += 1
+                    w.writerow({"nr": n, "lagrum_id": s["id"],
+                                "typ": "pekare",
+                                "referens": flat(r["referens"]),
+                                "mal": m["mal"],
+                                "mal_rubrik": flat(m.get("rubrik", "")),
+                                "instrument": "", "mal_text": "",
+                                "not": flat(r.get("not", ""))})
+            else:
+                n += 1
+                w.writerow({"nr": n, "lagrum_id": s["id"], "typ": "externt",
+                            "referens": flat(r["referens"]), "mal": "",
+                            "mal_rubrik": "",
+                            "instrument": flat(r["instrument"]),
+                            "mal_text": "", "not": flat(r.get("not", ""))})
+    fh.close()
+    nref = n
+
+    # --- termer: en rad per term och lagrum
+    tcols = ["nr", "lagrum_id", "term_ref", "term", "definition"]
+    fh, w = _writer(f"{OUT}/gdpr-termer-v1.0.csv", tcols)
+    n = 0
+    for s in sts:
+        for t in s["termer"]:
+            n += 1
+            w.writerow({"nr": n, "lagrum_id": s["id"],
+                        "term_ref": f"artikel {t['ref']}", "term": t["term"],
+                        "definition": flat(t["text"])})
+    fh.close()
+    print(f"{OUT}/{BASENAME}.csv: {len(sts)} rader, {len(cols)} kolumner")
+    print(f"{OUT}/gdpr-referenser-v1.0.csv: {nref} rader")
+    print(f"{OUT}/gdpr-termer-v1.0.csv: {n} rader")
+
+
 # ----------------------------------------------------------------- main
 
 def main():
@@ -304,39 +449,7 @@ def main():
               open(f"{OUT}/{BASENAME}.json", "w"),
               ensure_ascii=False, indent=1)
 
-    cols = ["id", "fil", "kapitel", "avsnitt", "artikel", "artikelrubrik",
-            "niva", "nivatyp", "normtext", "infogade_referenser", "pekare",
-            "externa_instrument", "termer", "referenskedja",
-            "vaga_hanvisningar", "lydelse", "markor", "lastext", "forbehall"]
-    with open(f"{OUT}/{BASENAME}.csv", "w", newline="") as fh:
-        w = csv.DictWriter(fh, fieldnames=cols, quoting=csv.QUOTE_ALL)
-        w.writeheader()
-        for s in sts:
-            inf = [r for r in s["referenser"] if r["typ"] == "infogad"]
-            pek = [m["mal"] for r in s["referenser"] if r["typ"] == "pekare"
-                   for m in r["mal_lista"]]
-            ext = [f"{r['referens']} i {r['instrument']}"
-                   for r in s["referenser"] if r["typ"] == "externt"]
-            w.writerow({
-                "id": s["id"], "fil": f"{LAGRUM}/{relpath(s)}",
-                "kapitel": s["kapitel"] or "", "avsnitt": s["avsnitt"] or "",
-                "artikel": s["artikel"], "artikelrubrik": s["artikelrubrik"],
-                "niva": s["niva"], "nivatyp": s["nivatyp"],
-                "normtext": "\n\n".join(f"[{b['label']}] {b['text']}"
-                                        for b in s["normtext"]),
-                "infogade_referenser": "; ".join(r["mal"] for r in inf),
-                "pekare": "; ".join(pek),
-                "externa_instrument": "; ".join(ext),
-                "termer": "; ".join(f"{t['ref']} {t['term']}"
-                                    for t in s["termer"]),
-                "referenskedja": "; ".join(s["referenskedja"]),
-                "vaga_hanvisningar": "; ".join(v["uttryck"]
-                                               for v in s["vaga_hanvisningar"]),
-                "lydelse": s["proveniens"]["lydelse"],
-                "markor": s["proveniens"]["markor"],
-                "lastext": render_plain(s),
-                "forbehall": FORBEHALL,
-            })
+    write_csv(sts)
 
     print(f"lagrum: {len(sts)}")
     print(f"{OUT}/{BASENAME}.md: {len(md)} tecken")

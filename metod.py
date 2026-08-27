@@ -234,7 +234,9 @@ ordalydelse avviker.
 | `lagrum/README.md` | rotindex per kapitel och avsnitt |
 | `dist/gdpr-lagrum-v1.0.md` | samlingsdokument, alla lagrum |
 | `dist/gdpr-lagrum-v1.0.json` | strukturerad utgåva för systeminläsning |
-| `dist/gdpr-lagrum-v1.0.csv` | platt utgåva, en rad per lagrum |
+| `dist/gdpr-lagrum-v1.0.csv` | tabell, en rad per lagrum |
+| `dist/gdpr-referenser-v1.0.csv` | tabell, en rad per hänvisning, nyckel `lagrum_id` |
+| `dist/gdpr-termer-v1.0.csv` | tabell, en rad per term och lagrum, nyckel `lagrum_id` |
 | `METOD.md` | detta dokument, genererat av `metod.py` |
 | `NOTICE` | källor, licensvillkor, redovisade ändringar |
 
@@ -242,10 +244,39 @@ Innehållet i `lagrum/` och `METOD.md` är genererat men versionshanterat, så a
 varje omgenerering ger en granskningsbar diff per lagrum. `dist/` är inte
 versionshanterat utan byggs i CI.
 
-CSV-kolumner: `id`, `fil`, `kapitel`, `avsnitt`, `artikel`, `artikelrubrik`,
-`niva`, `nivatyp`, `normtext`, `infogade_referenser`, `pekare`,
-`externa_instrument`, `termer`, `referenskedja`, `vaga_hanvisningar`,
-`lydelse`, `markor`, `lastext`, `forbehall`.
+### CSV-utgåvorna
+
+Tabellerna är avsedda att arbetas vidare i, inte bara läsas. Därför gäller:
+
+* **Semikolon** som fältavgränsare och **UTF-8 med BOM**, vilket är vad
+  svensk Excel förväntar sig. Radslut är CRLF. Filerna öppnas korrekt med
+  dubbelklick, utan importguide.
+* **Ingen cell innehåller radbrytning.** Fältantalet är konstant på varje rad.
+* **Flervärda fält har egna tabeller.** Referenser och termer är normaliserade
+  till barntabeller med `lagrum_id` som nyckel, eftersom flera värden i en
+  cell blockerar allt vidare arbete. Sammanslagna översikter finns kvar i
+  moderfilen för filtrering, med ` | ` som skiljetecken inuti cellen — aldrig
+  semikolon, som är fältavgränsare.
+* **Inga konstantkolumner.** Förbehållet, som är identiskt för alla lagrum,
+  ligger i detta dokument och i lagrumsfilerna, inte som 705 identiska celler.
+* **Kolumnen `nr`** bevarar ursprunglig ordning så att en sortering alltid kan
+  återställas. `kapitel_nr` och `avsnitt_nr` är heltal för att sortering ska
+  bli numerisk och inte alfabetisk.
+* **Kolumnen `url`** pekar på lagrummets fil i repot, så en rad i ett
+  GRC-verktyg kan länka direkt till den verifierade ordalydelsen.
+
+Moderfilen `gdpr-lagrum-v1.0.csv`: `nr`, `id`, `kapitel_nr`, `kapitel`,
+`avsnitt_nr`, `avsnitt`, `artikel`, `artikelrubrik`, `punkt`, `led`,
+`nivatyp`, `niva`, `normtext`, `normtext_tecken`, `antal_normtextblock`,
+`antal_infogade_referenser`, `antal_pekare`, `antal_externa_instrument`,
+`antal_termer`, `antal_kedjeposter`, `infogade_referenser`, `pekare`,
+`externa_instrument`, `termer`, `vaga_hanvisningar`, `markor`, `lydelse`,
+`fil`, `url`.
+
+`gdpr-referenser-v1.0.csv`: `nr`, `lagrum_id`, `typ`, `referens`, `mal`,
+`mal_rubrik`, `instrument`, `mal_text`, `not`.
+
+`gdpr-termer-v1.0.csv`: `nr`, `lagrum_id`, `term_ref`, `term`, `definition`.
 
 JSON-struktur: `kalla`, `omfattning`, `antal_lagrum`, `lagrum[]`.
 

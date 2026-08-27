@@ -148,7 +148,14 @@ source/SOURCE.md              pinnad indata
 |---|---|
 | `dist/gdpr-lagrum-v1.0.md` | samlingsdokument, alla lagrum, innehållsförteckning per kapitel |
 | `dist/gdpr-lagrum-v1.0.json` | strukturerad utgåva; `kalla`, `omfattning`, `antal_lagrum`, `lagrum[]` |
-| `dist/gdpr-lagrum-v1.0.csv` | en rad per lagrum, med kolumnen `lastext` färdig för GRC-fält och `fil` som pekar på lagrumsfilen |
+| `dist/gdpr-lagrum-v1.0.csv` | tabell, en rad per lagrum, 29 kolumner |
+| `dist/gdpr-referenser-v1.0.csv` | tabell, en rad per hänvisning, nyckel `lagrum_id` |
+| `dist/gdpr-termer-v1.0.csv` | tabell, en rad per term och lagrum, nyckel `lagrum_id` |
+
+CSV-utgåvorna är semikolonseparerade och UTF-8 med BOM, alltså direkt öppningsbara
+i svensk Excel utan importguide. Ingen cell innehåller radbrytning och fältantalet
+är konstant. Flervärda fält är normaliserade till barntabeller i stället för att
+packas i en cell. Se `METOD.md` avsnitt 9.
 
 ## Begränsningar
 
