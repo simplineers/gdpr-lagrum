@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   verify:
@@ -26,8 +26,28 @@ jobs:
       - name: Bygg och verifiera
         run: make all
 
+      # Pa pull request ar osynk ett fel: den som andrar generatorn ska se
+      # diffen i sin egen PR.
       - name: Kontrollera att lagrum/ och METOD.md ar aktuella
+        if: github.event_name == 'pull_request'
         run: make sync
+
+      # Pa main regenereras och committas i stallet, sa att de 705
+      # lagrumsfilerna inte behover laddas upp for hand vid varje andring.
+      # Verifieringen har redan kort ovan, sa det som committas ar granskat.
+      - name: Committa regenererade filer om de andrats
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        run: |
+          if git diff --quiet -- lagrum METOD.md; then
+            echo "lagrum/ och METOD.md ar redan aktuella."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add lagrum METOD.md
+          git commit -m "Regenerera lagrum/ och METOD.md [skip ci]" \
+            -m "Automatisk omgenerering efter andring i generatorn eller kallan. Bada ordagrannhetsgrindarna passerade fore commit."
+          git push
 
       - name: Ladda upp samlingsutgavorna
         uses: actions/upload-artifact@v4
